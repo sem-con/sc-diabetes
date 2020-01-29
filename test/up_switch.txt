@@ -1,0 +1,269 @@
+# no restrictions
+dsp0 = "<http://w3id.org/semcon/ns/ontology#ContainerPolicy> a <http://www.w3.org/2002/07/owl#Class>;\n    <http://www.w3.org/2002/07/owl#equivalentClass> [\n    a <http://www.w3.org/2002/07/owl#Class>;\n    <http://www.w3.org/2002/07/owl#intersectionOf> ([\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasData>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyData>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasProcessing>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyProcessing>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasPurpose>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyPurpose>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasRecipient>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyRecipient>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasStorage>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> [<http://www.w3.org/2002/07/owl#intersectionOf> ([\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasLocation>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyLocation>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasDuration>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/vocabs/duration#StatedPurpose>\n    ])]\n    ])\n    ] ."
+dcp0 = "<http://w3id.org/semcon/ns/ontology#ContainerPolicy> a <http://www.w3.org/2002/07/owl#Class>;\n    <http://www.w3.org/2002/07/owl#equivalentClass> [\n    a <http://www.w3.org/2002/07/owl#Class>;\n    <http://www.w3.org/2002/07/owl#intersectionOf> ([\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasData>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyData>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasProcessing>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyProcessing>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasPurpose>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyPurpose>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasRecipient>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyRecipient>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasStorage>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> [<http://www.w3.org/2002/07/owl#intersectionOf> ([\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasLocation>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyLocation>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasDuration>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/vocabs/duration#StatedPurpose>\n    ])]\n    ])\n    ] ."
+
+# long format with dsp InsulinPump and dcp Diabetes
+dsp1 = "<http://w3id.org/semcon/ns/ontology#ContainerPolicy> a <http://www.w3.org/2002/07/owl#Class>;\n    <http://www.w3.org/2002/07/owl#equivalentClass> [\n    a <http://www.w3.org/2002/07/owl#Class>;\n    <http://www.w3.org/2002/07/owl#intersectionOf> ([\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasData>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> [<http://www.w3.org/2002/07/owl#unionOf> (<http://w3id.org/semcon/ns/policy#InsulinPump>)]\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasRecipient>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyRecipient>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasPurpose>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyPurpose>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasProcessing>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyProcessing>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasStorage>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> [<http://www.w3.org/2002/07/owl#intersectionOf> ([\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasLocation>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyLocation>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasDuration>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/vocabs/duration#StatedPurpose>\n    ])]\n    ])\n    ] ."
+dcp1 = "<http://w3id.org/semcon/ns/ontology#ContainerPolicy> a <http://www.w3.org/2002/07/owl#Class>;\n    <http://www.w3.org/2002/07/owl#equivalentClass> [\n    a <http://www.w3.org/2002/07/owl#Class>;\n    <http://www.w3.org/2002/07/owl#intersectionOf> ([\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasData>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> [<http://www.w3.org/2002/07/owl#unionOf> (<http://w3id.org/semcon/ns/policy#Diabetes>)]\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasRecipient>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyRecipient>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasPurpose>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyPurpose>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasProcessing>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyProcessing>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasStorage>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> [<http://www.w3.org/2002/07/owl#intersectionOf> ([\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasLocation>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyLocation>\n    ] [\n    a <http://www.w3.org/2002/07/owl#Restriction>;\n    <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasDuration>;\n    <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/vocabs/duration#StatedPurpose>\n    ])]\n    ])\n    ] ."
+
+dsp1 = "@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix spl: <http://www.specialprivacy.eu/langs/usage-policy#> .\n@prefix svd: <http://www.specialprivacy.eu/vocabs/data#> .\n@prefix svr: <http://www.specialprivacy.eu/vocabs/recipients#> .\n@prefix svpu: <http://www.specialprivacy.eu/vocabs/purposes#> .\n@prefix svpr: <http://www.specialprivacy.eu/vocabs/processing#> .\n@prefix svl: <http://www.specialprivacy.eu/vocabs/locations#> .\n@prefix svdu: <http://www.specialprivacy.eu/vocabs/duration#> .\n@prefix svd: <http://www.specialprivacy.eu/vocabs/data#> .\n@prefix scp: <http://w3id.org/semcon/ns/policy#> .\n\n:ContainerPolicy rdf:type owl:Class ; # this line should not be changed!\n    owl:equivalentClass [ \n        owl:intersectionOf ( \n            [ \n                rdf:type owl:Restriction ;\n                owl:onProperty spl:hasData ;\n                owl:someValuesFrom [ \n                    owl:unionOf ( \n                        scp:InsulinPump\n                    ) ;\n                ] \n            ]\n            [ \n                rdf:type owl:Restriction ;\n                owl:onProperty spl:hasRecipient ;\n                owl:someValuesFrom spl:AnyRecipient\n            ]\n            [ \n                rdf:type owl:Restriction ;\n                owl:onProperty spl:hasPurpose ;\n                owl:someValuesFrom spl:AnyPurpose\n            ]\n            [ \n                rdf:type owl:Restriction ;\n                owl:onProperty spl:hasProcessing ;\n                owl:someValuesFrom spl:AnyProcessing\n            ]\n            [ \n                rdf:type owl:Restriction ;\n                owl:onProperty spl:hasStorage ;\n                owl:someValuesFrom [ \n                    owl:intersectionOf ( \n                        [ \n                            rdf:type owl:Restriction ;\n                            owl:onProperty spl:hasLocation ;\n                            owl:someValuesFrom spl:AnyLocation\n                        ] \n                        [ \n                            rdf:type owl:Restriction ;\n                            owl:onProperty spl:hasDuration ;\n                            owl:someValuesFrom svdu:StatedPurpose\n                        ] \n                    ) \n                ] \n            ]\n        ) ;\n        rdf:type owl:Class\n    ] ."
+dcp1 = "@prefix owl: <http://www.w3.org/2002/07/owl#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix spl: <http://www.specialprivacy.eu/langs/usage-policy#> .\n@prefix svd: <http://www.specialprivacy.eu/vocabs/data#> .\n@prefix svr: <http://www.specialprivacy.eu/vocabs/recipients#> .\n@prefix svpu: <http://www.specialprivacy.eu/vocabs/purposes#> .\n@prefix svpr: <http://www.specialprivacy.eu/vocabs/processing#> .\n@prefix svl: <http://www.specialprivacy.eu/vocabs/locations#> .\n@prefix svdu: <http://www.specialprivacy.eu/vocabs/duration#> .\n@prefix svd: <http://www.specialprivacy.eu/vocabs/data#> .\n@prefix scp: <http://w3id.org/semcon/ns/policy#> .\n\n:ContainerPolicy rdf:type owl:Class ; # this line should not be changed!\n    owl:equivalentClass [ \n        owl:intersectionOf ( \n            [ \n                rdf:type owl:Restriction ;\n                owl:onProperty spl:hasData ;\n                owl:someValuesFrom [ \n                    owl:unionOf ( \n                        scp:Diabetes\n                    ) ;\n                ] \n            ]\n            [ \n                rdf:type owl:Restriction ;\n                owl:onProperty spl:hasRecipient ;\n                owl:someValuesFrom spl:AnyRecipient\n            ]\n            [ \n                rdf:type owl:Restriction ;\n                owl:onProperty spl:hasPurpose ;\n                owl:someValuesFrom spl:AnyPurpose\n            ]\n            [ \n                rdf:type owl:Restriction ;\n                owl:onProperty spl:hasProcessing ;\n                owl:someValuesFrom spl:AnyProcessing\n            ]\n            [ \n                rdf:type owl:Restriction ;\n                owl:onProperty spl:hasStorage ;\n                owl:someValuesFrom [ \n                    owl:intersectionOf ( \n                        [ \n                            rdf:type owl:Restriction ;\n                            owl:onProperty spl:hasLocation ;\n                            owl:someValuesFrom spl:AnyLocation\n                        ] \n                        [ \n                            rdf:type owl:Restriction ;\n                            owl:onProperty spl:hasDuration ;\n                            owl:someValuesFrom svdu:StatedPurpose\n                        ] \n                    ) \n                ] \n            ]\n        ) ;\n        rdf:type owl:Class\n    ] ."
+
+dsp3 = "@prefix owl: <http://www.w3.org/2002/07/owl#> . @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . @prefix spl: <http://www.specialprivacy.eu/langs/usage-policy#> . @prefix svd: <http://www.specialprivacy.eu/vocabs/data#> . @prefix svr: <http://www.specialprivacy.eu/vocabs/recipients#> . @prefix svpu: <http://www.specialprivacy.eu/vocabs/purposes#> . @prefix svpr: <http://www.specialprivacy.eu/vocabs/processing#> . @prefix svl: <http://www.specialprivacy.eu/vocabs/locations#> . @prefix svdu: <http://www.specialprivacy.eu/vocabs/duration#> . @prefix svd: <http://www.specialprivacy.eu/vocabs/data#> .  :ContainerPolicy rdf:type owl:Class ; # this line should not be changed!     owl:equivalentClass [          owl:intersectionOf (              [                  rdf:type owl:Restriction ;                 owl:onProperty spl:hasData ;                 owl:someValuesFrom spl:AnyData             ]             [                  rdf:type owl:Restriction ;                 owl:onProperty spl:hasRecipient ;                 owl:someValuesFrom spl:AnyRecipient             ]             [                  rdf:type owl:Restriction ;                 owl:onProperty spl:hasPurpose ;                 owl:someValuesFrom spl:AnyPurpose             ]             [                  rdf:type owl:Restriction ;                 owl:onProperty spl:hasProcessing ;                 owl:someValuesFrom spl:AnyProcessing             ]             [                  rdf:type owl:Restriction ;                 owl:onProperty spl:hasStorage ;                 owl:someValuesFrom [                      owl:intersectionOf (                          [                              rdf:type owl:Restriction ;                             owl:onProperty spl:hasLocation ;                             owl:someValuesFrom spl:AnyLocation                         ]                          [                              rdf:type owl:Restriction ;                             owl:onProperty spl:hasDuration ;                             owl:someValuesFrom svdu:StatedPurpose                         ]                      )                  ]              ]         ) ;         rdf:type owl:Class     ] . "
+dcp3 = "<http://www.w3.org/2002/07/owl#equivalentClass> [ a <http://www.w3.org/2002/07/owl#Class>; <http://www.w3.org/2002/07/owl#intersectionOf> ([ a <http://www.w3.org/2002/07/owl#Restriction>; <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasData>; <http://www.w3.org/2002/07/owl#someValuesFrom> [<http://www.w3.org/2002/07/owl#unionOf> (<http://www.specialprivacy.eu/vocabs/data#svd:InsulinPump>)] ] [ a <http://www.w3.org/2002/07/owl#Restriction>; <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasRecipient>; <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyRecipient> ] [ a <http://www.w3.org/2002/07/owl#Restriction>; <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasPurpose>; <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyPurpose> ] [ a <http://www.w3.org/2002/07/owl#Restriction>; <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasProcessing>; <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyProcessing> ] [ a <http://www.w3.org/2002/07/owl#Restriction>; <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasStorage>; <http://www.w3.org/2002/07/owl#someValuesFrom> [<http://www.w3.org/2002/07/owl#intersectionOf> ([ a <http://www.w3.org/2002/07/owl#Restriction>; <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasLocation>; <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyLocation> ] [ a <http://www.w3.org/2002/07/owl#Restriction>; <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasDuration>; <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/vocabs/duration#StatedPurpose> ])] ]) ] ."
+
+dsp4 = "<http://www.w3.org/2002/07/owl#equivalentClass> [ a <http://www.w3.org/2002/07/owl#Class>; <http://www.w3.org/2002/07/owl#intersectionOf> ([ a <http://www.w3.org/2002/07/owl#Restriction>; <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasData>; <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyData> ] [ a <http://www.w3.org/2002/07/owl#Restriction>; <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasRecipient>; <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyRecipient> ] [ a <http://www.w3.org/2002/07/owl#Restriction>; <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasPurpose>; <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyPurpose> ] [ a <http://www.w3.org/2002/07/owl#Restriction>; <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasProcessing>; <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyProcessing> ] [ a <http://www.w3.org/2002/07/owl#Restriction>; <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasStorage>; <http://www.w3.org/2002/07/owl#someValuesFrom> [<http://www.w3.org/2002/07/owl#intersectionOf> ([ a <http://www.w3.org/2002/07/owl#Restriction>; <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasLocation>; <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyLocation> ] [ a <http://www.w3.org/2002/07/owl#Restriction>; <http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasDuration>; <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/vocabs/duration#StatedPurpose> ])] ]) ] ."
+dcp4 = "@prefix owl: <http://www.w3.org/2002/07/owl#> . @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . @prefix spl: <http://www.specialprivacy.eu/langs/usage-policy#> . @prefix svd: <http://www.specialprivacy.eu/vocabs/data#> . @prefix svr: <http://www.specialprivacy.eu/vocabs/recipients#> . @prefix svpu: <http://www.specialprivacy.eu/vocabs/purposes#> . @prefix svpr: <http://www.specialprivacy.eu/vocabs/processing#> . @prefix svl: <http://www.specialprivacy.eu/vocabs/locations#> . @prefix svdu: <http://www.specialprivacy.eu/vocabs/duration#> . @prefix svd: <http://www.specialprivacy.eu/vocabs/data#> .  :ContainerPolicy rdf:type owl:Class ; # this line should not be changed! owl:equivalentClass [      owl:intersectionOf (          [              rdf:type owl:Restriction ;             owl:onProperty spl:hasData ;             owl:someValuesFrom [                  owl:unionOf (                      svd:InsulinPump                 ) ;             ]          ]         [              rdf:type owl:Restriction ;             owl:onProperty spl:hasRecipient ;             owl:someValuesFrom spl:AnyRecipient         ]         [              rdf:type owl:Restriction ;             owl:onProperty spl:hasPurpose ;             owl:someValuesFrom spl:AnyPurpose         ]         [              rdf:type owl:Restriction ;             owl:onProperty spl:hasProcessing ;             owl:someValuesFrom spl:AnyProcessing         ]         [              rdf:type owl:Restriction ;             owl:onProperty spl:hasStorage ;             owl:someValuesFrom [                  owl:intersectionOf (                      [                          rdf:type owl:Restriction ;                         owl:onProperty spl:hasLocation ;                         owl:someValuesFrom spl:AnyLocation                     ]                      [                          rdf:type owl:Restriction ;                         owl:onProperty spl:hasDuration ;                         owl:someValuesFrom svdu:StatedPurpose                     ]                  )              ]          ]     ) ;     rdf:type owl:Class ] ."
+
+# Skeleton for tests ==========================
+
+# most simple test case (outdated)
+# dsp0 = "this is a dsp [try] and more"
+# dcp0 = "this is a dcp [test] and more"
+
+# choose and unify test case
+dsp = RDF::Reader.for(:ttl).new(dsp1).dump(:ttl).gsub("\n", "_|_")
+dcp = RDF::Reader.for(:ttl).new(dcp1).dump(:ttl).gsub("\n", "_|_")
+
+# extract parts
+dsp_part = dsp.scan(/.*?(\[.*?\]).*/).first.first
+dcp_part = dcp.scan(/.*?(\[.*?\]).*/).first.first
+
+# write parts
+dsp_new = dsp.sub(/\[.*?\]/, dcp_part).strip.split("_|_")[2..-1].join("\n")
+dcp_new = dcp.sub(/\[.*?\]/, dsp_part).strip.split("_|_")[2..-1].join("\n")
+
+intro  = "@prefix sc: <http://w3id.org/semcon/ns/ontology#> .\n"
+intro += "@prefix owl: <http://www.w3.org/2002/07/owl#> .\n"
+intro += "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n"
+intro += "@prefix xml: <http://www.w3.org/XML/1998/namespace> .\n"
+intro += "@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n"
+intro += "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n"
+intro += "@prefix spl: <http://www.specialprivacy.eu/langs/usage-policy#> .\n"
+intro += "@prefix svd: <http://www.specialprivacy.eu/vocabs/data#> .\n"
+intro += "@prefix svr: <http://www.specialprivacy.eu/vocabs/recipients#> .\n"
+intro += "@prefix svpu: <http://www.specialprivacy.eu/vocabs/purposes#> .\n"
+intro += "@prefix svpr: <http://www.specialprivacy.eu/vocabs/processing#> .\n"
+intro += "@prefix svl: <http://www.specialprivacy.eu/vocabs/locations#> .\n"
+intro += "@prefix svdu: <http://www.specialprivacy.eu/vocabs/duration#> .\n"
+
+
+dataSubject_intro = "sc:DataSubjectPolicy rdf:type owl:Class ;\n"
+dataController_intro = "sc:DataControllerPolicy rdf:type owl:Class ;\n"
+
+usage_matching = {
+    "usage-policy": intro + dataSubject_intro + dsp_new + "\n" + dataController_intro + dcp_new
+}.stringify_keys
+
+# query service if policies match
+usage_matching_url = "https://semantic.ownyourdata.eu/api/validate/usage-policy"
+response = HTTParty.post(usage_matching_url, headers: { 'Content-Type' => 'application/json' }, body: usage_matching.to_json)
+
+
+
+
+DATA SUBJECT POLICY ==================
+<http://w3id.org/semcon/ns/ontology#UsagePolicy> {
+<http://w3id.org/semcon/ns/ontology#ContainerPolicy> a <http://www.w3.org/2002/07/owl#Class>;
+<http://www.w3.org/2002/07/owl#equivalentClass> [
+a <http://www.w3.org/2002/07/owl#Class>;
+<http://www.w3.org/2002/07/owl#intersectionOf> ([
+a <http://www.w3.org/2002/07/owl#Restriction>;
+<http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasData>;
+<http://www.w3.org/2002/07/owl#someValuesFrom> [<http://www.w3.org/2002/07/owl#unionOf> (<http://www.specialprivacy.eu/vocabs/data#svd:Diabetes>)]
+] [
+a <http://www.w3.org/2002/07/owl#Restriction>;
+<http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasRecipient>;
+<http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyRecipient>
+] [
+a <http://www.w3.org/2002/07/owl#Restriction>;
+<http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasPurpose>;
+<http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyPurpose>
+] [
+a <http://www.w3.org/2002/07/owl#Restriction>;
+<http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasProcessing>;
+<http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyProcessing>
+] [
+a <http://www.w3.org/2002/07/owl#Restriction>;
+<http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasStorage>;
+<http://www.w3.org/2002/07/owl#someValuesFrom> [<http://www.w3.org/2002/07/owl#intersectionOf> ([
+a <http://www.w3.org/2002/07/owl#Restriction>;
+<http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasLocation>;
+<http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyLocation>
+] [
+a <http://www.w3.org/2002/07/owl#Restriction>;
+<http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasDuration>;
+<http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/vocabs/duration#StatedPurpose>
+])]
+])
+] .
+}
+
+extrahiere den Inhalt zwischen den 1. rechteckigen Klammern
+
+# within square brackets exchange content of first square brackets
+
+
+<http://www.w3.org/2002/07/owl#equivalentClass> [
+a <http://www.w3.org/2002/07/owl#Class>;
+<http://www.w3.org/2002/07/owl#intersectionOf> ([
+a <http://www.w3.org/2002/07/owl#Restriction>;
+<http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasData>;
+<http://www.w3.org/2002/07/owl#someValuesFrom> [<http://www.w3.org/2002/07/owl#unionOf> (<http://www.specialprivacy.eu/vocabs/data#svd:InsulinPump>)]
+] [
+a <http://www.w3.org/2002/07/owl#Restriction>;
+<http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasRecipient>;
+<http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyRecipient>
+] [
+a <http://www.w3.org/2002/07/owl#Restriction>;
+<http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasPurpose>;
+<http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyPurpose>
+] [
+a <http://www.w3.org/2002/07/owl#Restriction>;
+<http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasProcessing>;
+<http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyProcessing>
+] [
+a <http://www.w3.org/2002/07/owl#Restriction>;
+<http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasStorage>;
+<http://www.w3.org/2002/07/owl#someValuesFrom> [<http://www.w3.org/2002/07/owl#intersectionOf> ([
+a <http://www.w3.org/2002/07/owl#Restriction>;
+<http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasLocation>;
+<http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/langs/usage-policy#AnyLocation>
+] [
+a <http://www.w3.org/2002/07/owl#Restriction>;
+<http://www.w3.org/2002/07/owl#onProperty> <http://www.specialprivacy.eu/langs/usage-policy#hasDuration>;
+<http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.specialprivacy.eu/vocabs/duration#StatedPurpose>
+])]
+])
+] .
+
+
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix spl: <http://www.specialprivacy.eu/langs/usage-policy#> .
+@prefix svd: <http://www.specialprivacy.eu/vocabs/data#> .
+@prefix svr: <http://www.specialprivacy.eu/vocabs/recipients#> .
+@prefix svpu: <http://www.specialprivacy.eu/vocabs/purposes#> .
+@prefix svpr: <http://www.specialprivacy.eu/vocabs/processing#> .
+@prefix svl: <http://www.specialprivacy.eu/vocabs/locations#> .
+@prefix svdu: <http://www.specialprivacy.eu/vocabs/duration#> .
+@prefix svd: <http://www.specialprivacy.eu/vocabs/data#> .
+
+:ContainerPolicy rdf:type owl:Class ; # this line should not be changed!
+owl:equivalentClass [ 
+    owl:intersectionOf ( 
+        [ 
+            rdf:type owl:Restriction ;
+            owl:onProperty spl:hasData ;
+            owl:someValuesFrom [ 
+                owl:unionOf ( 
+                    svd:Diabetes
+                ) ;
+            ] 
+        ]
+        [ 
+            rdf:type owl:Restriction ;
+            owl:onProperty spl:hasRecipient ;
+            owl:someValuesFrom spl:AnyRecipient
+        ]
+        [ 
+            rdf:type owl:Restriction ;
+            owl:onProperty spl:hasPurpose ;
+            owl:someValuesFrom spl:AnyPurpose
+        ]
+        [ 
+            rdf:type owl:Restriction ;
+            owl:onProperty spl:hasProcessing ;
+            owl:someValuesFrom spl:AnyProcessing
+        ]
+        [ 
+            rdf:type owl:Restriction ;
+            owl:onProperty spl:hasStorage ;
+            owl:someValuesFrom [ 
+                owl:intersectionOf ( 
+                    [ 
+                        rdf:type owl:Restriction ;
+                        owl:onProperty spl:hasLocation ;
+                        owl:someValuesFrom spl:AnyLocation
+                    ] 
+                    [ 
+                        rdf:type owl:Restriction ;
+                        owl:onProperty spl:hasDuration ;
+                        owl:someValuesFrom svdu:StatedPurpose
+                    ] 
+                ) 
+            ] 
+        ]
+    ) ;
+    rdf:type owl:Class
+] .
+
+
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix spl: <http://www.specialprivacy.eu/langs/usage-policy#> .
+@prefix svd: <http://www.specialprivacy.eu/vocabs/data#> .
+@prefix svr: <http://www.specialprivacy.eu/vocabs/recipients#> .
+@prefix svpu: <http://www.specialprivacy.eu/vocabs/purposes#> .
+@prefix svpr: <http://www.specialprivacy.eu/vocabs/processing#> .
+@prefix svl: <http://www.specialprivacy.eu/vocabs/locations#> .
+@prefix svdu: <http://www.specialprivacy.eu/vocabs/duration#> .
+@prefix svd: <http://www.specialprivacy.eu/vocabs/data#> .
+
+:ContainerPolicy rdf:type owl:Class ; # this line should not be changed!
+owl:equivalentClass [ 
+    owl:intersectionOf ( 
+        [ 
+            rdf:type owl:Restriction ;
+            owl:onProperty spl:hasData ;
+            owl:someValuesFrom [ 
+                owl:unionOf ( 
+                    svd:InsulinPump
+                ) ;
+            ] 
+        ]
+        [ 
+            rdf:type owl:Restriction ;
+            owl:onProperty spl:hasRecipient ;
+            owl:someValuesFrom spl:AnyRecipient
+        ]
+        [ 
+            rdf:type owl:Restriction ;
+            owl:onProperty spl:hasPurpose ;
+            owl:someValuesFrom spl:AnyPurpose
+        ]
+        [ 
+            rdf:type owl:Restriction ;
+            owl:onProperty spl:hasProcessing ;
+            owl:someValuesFrom spl:AnyProcessing
+        ]
+        [ 
+            rdf:type owl:Restriction ;
+            owl:onProperty spl:hasStorage ;
+            owl:someValuesFrom [ 
+                owl:intersectionOf ( 
+                    [ 
+                        rdf:type owl:Restriction ;
+                        owl:onProperty spl:hasLocation ;
+                        owl:someValuesFrom spl:AnyLocation
+                    ] 
+                    [ 
+                        rdf:type owl:Restriction ;
+                        owl:onProperty spl:hasDuration ;
+                        owl:someValuesFrom svdu:StatedPurpose
+                    ] 
+                ) 
+            ] 
+        ]
+    ) ;
+    rdf:type owl:Class
+] .
+
+
+
+===================
+
+puts dsp.sub(/.*(\[.*\]).*/, dcp.scan(/.*(\[.*\]).*/).first.first)
+

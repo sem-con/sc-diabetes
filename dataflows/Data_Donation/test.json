@@ -1,0 +1,18 @@
+[
+  {
+    "deviceId": "InsOmn-130130814",
+    "type": "smbg",
+    "units": "mmol/L",
+    "time": "2015-12-02T12:13:44",
+    "id": "ahmmvi0dsl31lvg4eehjljnn80m7ii7e",
+    "value": 7.271479868269648
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "deviceEvent",
+    "units": "mmol/L",
+    "time": "2015-12-02T12:16:06",
+    "id": "5j6ribjsv0jtp063fi9dc26fqnn1er9a",
+    "value": 7.271479868269648
+  }
+]

@@ -1,0 +1,95 @@
+semcon -w -c df1_local_init.trig -n df1_pwd_local sc-diabetes
+
+cd ~/semcon/projects/MyPCH/sc-diabetes/dataflows/Data_Donation
+
+## WRITE PERSONAL DIABETES DATA INTO LOCAL CONTAINER
+
+# start semantic container
+docker rm -f df1_pwd_local
+IMAGE=semcon/sc-diabetes:latest; docker run -d --name df1_pwd_local -e WATERMARK=true -e IMAGE_SHA256="$(docker image ls --no-trunc -q $IMAGE | cut -c8-)" -e IMAGE_NAME=$IMAGE -p 4000:3000 $IMAGE /bin/init.sh "$(< df1_pwd_local_init.trig)"
+
+# get status
+curl http://localhost:4000/api/active
+
+# get credentials for df1_pwd_local -> PWD_TOKEN_LOCAL
+export APP_KEY=`docker logs df1_pwd_local 2>/dev/null | grep ^APP_KEY | awk -F " " '{print $NF}'`; export APP_SECRET=`docker logs df1_pwd_local 2>/dev/null | grep ^APP_SECRET | awk -F " " '{print $NF}'`; export PWD_TOKEN_LOCAL=`curl -s -d grant_type=client_credentials -d client_id=$APP_KEY -d client_secret=$APP_SECRET -d scope=admin -X POST http://localhost:4000/oauth/token | jq -r '.access_token'`
+
+echo $PWD_TOKEN_LOCAL
+
+
+# write first dataset into container
+cat df1_data_part1.json | curl -H "Content-Type: application/json" -H "Authorization: Bearer $PWD_TOKEN_LOCAL" -d @- -X POST http://localhost:4000/api/data
+cat df1_data_part2.json | curl -H "Content-Type: application/json" -H "Authorization: Bearer $PWD_TOKEN_LOCAL" -d @- -X POST http://localhost:4000/api/data
+
+# count records local Semantic Container
+curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $PWD_TOKEN_LOCAL" http://localhost:4000/api/data/plain | jq -r '. | length'
+
+# show provenance
+curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $PWD_TOKEN_LOCAL" http://localhost:4000/api/data | jq '.provision.provenance' | ruby -e "puts $(</dev/stdin)"
+
+# create read access for an organization
+export TMP=`curl -s -H "Authorization: Bearer $PWD_TOKEN_LOCAL" -d name=org -d scopes=read -X POST http://localhost:4000/oauth/applications`; export TMP_KEY=`echo $TMP | jq -r '.client_id'`; export TMP_SECRET=`echo $TMP | jq -r '.client_secret'`; export ORG_TOKEN_LOCAL=`curl -s -d grant_type=client_credentials -d client_id=$TMP_KEY -d client_secret=$TMP_SECRET -d scope=read -X POST http://localhost:4000/oauth/token | jq -r '.access_token'`
+
+echo $ORG_TOKEN_LOCAL
+
+
+## COPY LOCAL DATA TO CLOUD CONTAINER ORG1
+
+# Setup Org1 Semantic Container
+docker rm -f df1_org1_cloud
+IMAGE=semcon/sc-diabetes:latest; docker run -d --name df1_org1_cloud -e AUTH=true -e IMAGE_SHA256="$(docker image ls --no-trunc -q $IMAGE | cut -c8-)" -e IMAGE_NAME=$IMAGE -p 4500:3000 $IMAGE /bin/init.sh "$(< df1_org1_cloud_init.trig)"
+
+# get credentials for df1_org1_cloud -> ORG_TOKEN_CLOUD
+export APP_KEY=`docker logs df1_org1_cloud 2>/dev/null | grep ^APP_KEY | awk -F " " '{print $NF}'`; export APP_SECRET=`docker logs df1_org1_cloud 2>/dev/null | grep ^APP_SECRET | awk -F " " '{print $NF}'`; export ORG_TOKEN_CLOUD=`curl -s -d grant_type=client_credentials -d client_id=$APP_KEY -d client_secret=$APP_SECRET -d scope=admin -X POST http://localhost:4500/oauth/token | jq -r '.access_token'`
+
+echo $ORG_TOKEN_CLOUD
+
+# copy data from local to org1
+curl -s -H "Authorization: Bearer $ORG_TOKEN_LOCAL" http://localhost:4000/api/data | curl -H "Content-Type: application/json" -H "Authorization: Bearer $ORG_TOKEN_CLOUD" -d @- -X POST http://localhost:4500/api/data
+
+# count records Org1 cloud Semantic Container
+curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $ORG_TOKEN_CLOUD" http://localhost:4500/api/data/plain | jq -r '. | length'
+
+# show provenance
+curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $ORG_TOKEN_CLOUD" http://localhost:4500/api/data | jq '.provision.provenance' | ruby -e "puts $(</dev/stdin)"
+
+
+
+## COPY LOCAL DATA TO CLOUD CONTAINER ORG2
+
+# Setup Org2 Semantic Container
+docker rm -f df1_org2_cloud
+IMAGE=semcon/sc-diabetes:latest; docker run -d --name df1_org2_cloud -e WATERMARK=true -e IMAGE_SHA256="$(docker image ls --no-trunc -q $IMAGE | cut -c8-)" -e IMAGE_NAME=$IMAGE -p 4510:3000 $IMAGE /bin/init.sh "$(< df1_org2_cloud_init.trig)"
+
+# get credentials for df1_org2_cloud -> ORG2_TOKEN_CLOUD
+export APP_KEY=`docker logs df1_org2_cloud 2>/dev/null | grep ^APP_KEY | awk -F " " '{print $NF}'`; export APP_SECRET=`docker logs df1_org2_cloud 2>/dev/null | grep ^APP_SECRET | awk -F " " '{print $NF}'`; export ORG2_TOKEN_CLOUD=`curl -s -d grant_type=client_credentials -d client_id=$APP_KEY -d client_secret=$APP_SECRET -d scope=admin -X POST http://localhost:4510/oauth/token | jq -r '.access_token'`
+
+echo $ORG2_TOKEN_CLOUD
+
+# try to copy data from local to org2
+curl -s -H "Authorization: Bearer $ORG_TOKEN_LOCAL" http://localhost:4000/api/data | curl -H "Content-Type: application/json" -H "Authorization: Bearer $ORG2_TOKEN_CLOUD" -d @- -X POST http://localhost:4510/api/data
+
+
+## ACCESS ORG1 CONTAINER WITH R & PYTHON
+
+# get credentials for app_key
+docker logs df1_org1_cloud 2>/dev/null | grep ^APP_KEY | awk -F " " '{print "APP-KEY: "$NF}'
+# get credentials for app_secret
+docker logs df1_org1_cloud 2>/dev/null | grep ^APP_SECRET | awk -F " " '{print $NF}'
+
+# use R_Notebook.Rmd
+# use Jupyter_Notebook.ipynb
+jupyter-notebook Jupyter_Notebook.ipynb
+
+
+## IDENTIFY LEAK
+
+# unauthorized data download
+curl -s -H "Authorization: Bearer $ORG_TOKEN_CLOUD" -H "Content-Type: application/json" http://localhost:4500/api/data/plain > unauthorized_copy.json
+
+cat unauthorized_copy.json | curl -H "Content-Type: application/json" -H "Authorization: Bearer $PWD_TOKEN_LOCAL" -d @-  -X POST http://localhost:4000/api/watermark/identify
+
+# extract fragment based on highest ranking result
+jq '.[:205]' unauthorized_copy.json > fragment.json
+
+cat fragment.json |  curl -H "Content-Type: application/json" -H "Authorization: Bearer $PWD_TOKEN_LOCAL" -d @-  -X POST http://localhost:4000/api/watermark/user/2/fragment/2015-12-13

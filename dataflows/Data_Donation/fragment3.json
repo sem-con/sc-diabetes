@@ -1,0 +1,970 @@
+[
+  {
+    "deviceId": "InsOmn-130130814",
+    "type": "smbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T11:17:19",
+    "id": "mhn0nmiddcqh2nc34kiblv8loqo9i4rf",
+    "value": 2.594786744289516
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "deviceEvent",
+    "units": "mmol/L",
+    "time": "2015-12-04T11:20:49",
+    "id": "qjn0rgnn302u3r3gkpaiifhd45ugup0n",
+    "value": 2.4366721182585143
+  },
+  {
+    "deviceId": "InsOmn-130130814",
+    "type": "smbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T11:32:41",
+    "id": "8vmkmbe4lit2cts7die02nk17sdd6f1r",
+    "value": 3.9357671938027337
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "deviceEvent",
+    "units": "mmol/L",
+    "time": "2015-12-04T11:41:06",
+    "id": "g5g8pqbr4ddqppfb75go9jtgnh66dg4m",
+    "value": 6.6792958847061685
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "deviceEvent",
+    "units": "mmol/L",
+    "time": "2015-12-04T11:41:19",
+    "id": "7kfhq2ovm4imug1jb5taakqfcoehidcd",
+    "value": 3.9168826594799437
+  },
+  {
+    "deviceId": "InsOmn-130130814",
+    "type": "smbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T12:35:02",
+    "id": "l9nf5k2jap2i9oudvp4vsbd6sjidhdu1",
+    "value": 1.8988540164536036
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "deviceEvent",
+    "units": "mmol/L",
+    "time": "2015-12-04T12:37:19",
+    "id": "73gs7i0c4j1csnam1etin0rb63l68j1h",
+    "value": 2.082075259101264
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "deviceEvent",
+    "units": "mmol/L",
+    "time": "2015-12-04T12:37:26",
+    "id": "98m1bdb3e165uibdlv2vr93nboacp4oq",
+    "value": 3.666181144259693
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "deviceEvent",
+    "units": "mmol/L",
+    "time": "2015-12-04T12:37:42",
+    "id": "7kcbldcagtid425p4m7va3cptrcfoltf",
+    "value": 1.9851110568868249
+  },
+  {
+    "deviceId": "InsOmn-130130814",
+    "type": "smbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T13:38:26",
+    "id": "12b94ua3ff20gc2h5vb27tth7r2074eo",
+    "value": 9.290671360380562
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T14:42:31",
+    "id": "g726k903n7vvpgplqdmbg40iscqg3c4p",
+    "value": 10.015331114683782
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T14:47:31",
+    "id": "d49c3modg0k5h8ggc6ujho333cvfjf02",
+    "value": 10.078250317947155
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T14:52:31",
+    "id": "qlek3becal1162co4d4dp111t0hnr3h4",
+    "value": 10.229697238231411
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T14:57:31",
+    "id": "frj43nars6q0a40kbt2g1e424s2arn7d",
+    "value": 10.523772698613955
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T15:02:31",
+    "id": "mjetvdikieq9vfnv56e51o04e23g85l2",
+    "value": 10.504013414346234
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T15:07:31",
+    "id": "kn0toej847ghjpppq7glrun63om904u1",
+    "value": 10.806662637337881
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T15:12:31",
+    "id": "jmkbghumdbeqra1ga9hn6pauno6eieel",
+    "value": 11.22812168468719
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T15:17:31",
+    "id": "rsg33gtf2gai8qi15mgj74in951v3cn4",
+    "value": 11.303745436983656
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T15:22:31",
+    "id": "gopforr2sua9gkdrmqheve18lfftin1s",
+    "value": 11.56716330520358
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T15:27:31",
+    "id": "80m3e0e5jrkrugrucsl1prsrh9he2omg",
+    "value": 11.284274495750362
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T15:32:31",
+    "id": "rffot498aea56l4o45juvn8ka7f78k6e",
+    "value": 11.909857742326354
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T15:37:31",
+    "id": "h5fqn28ekne38gvabd5ftukmuk60eh0j",
+    "value": 11.772142688362841
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T15:42:31",
+    "id": "sattg8gkr39rv2hc8tmegbppmgol3m48",
+    "value": 11.741821060712905
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T15:47:31",
+    "id": "n2625k775qf2ai7dg216l9au3q3ai10u",
+    "value": 11.878204015629608
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T15:52:31",
+    "id": "fld58ml6edsnoik28rvi884ojciscee4",
+    "value": 12.091225618741687
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T15:57:31",
+    "id": "fii4mijiq6d4qurbhf78t6pr2c1tqlec",
+    "value": 12.197995588455901
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T16:02:31",
+    "id": "75oou4b7jakao04megd27udbbs2fp2kb",
+    "value": 12.233595646520342
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T16:07:31",
+    "id": "l37b0j568rr56uoa3kpjrf534h5b9ijf",
+    "value": 12.509944720473289
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T16:12:31",
+    "id": "5rr1lp6sdtbs6srnrp9t1d4vo2ivk768",
+    "value": 12.385173005146237
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T16:17:31",
+    "id": "j8si6ugc3mckgrldiofpesvjoqjed79i",
+    "value": 12.265616779831875
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T16:22:31",
+    "id": "b191v8estrpfcv4skue15g3kvh8glgg0",
+    "value": 12.411649058113126
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T16:27:31",
+    "id": "4mbsuq1i2pq5gbhte6u2q8grlignp2l1",
+    "value": 12.451824103837238
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T16:32:31",
+    "id": "baqjsu8vroa7hrchp35bii789m39lgl4",
+    "value": 12.521365093039314
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T16:37:31",
+    "id": "486uaqbl9ptogbdmr9ifgrloahrpjqdm",
+    "value": 12.64542681949107
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T16:42:31",
+    "id": "tped33rkseqvl05brl2bp5ofi4p0s4gr",
+    "value": 12.630007877714442
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T16:47:31",
+    "id": "9khcsc7vqk5hdro0d3ubpakvuk1tskae",
+    "value": 12.363495513447129
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T16:52:31",
+    "id": "kd5d84hop5d7l0f7cove521m5q5gv0oq",
+    "value": 12.747872125361194
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T16:57:31",
+    "id": "916t69si63nn3jq9f4n8vtih9phbq44a",
+    "value": 12.618798599931504
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T17:02:31",
+    "id": "01fbainokdbvb1kr9n2qe9d7gsr2miea",
+    "value": 12.758099519763249
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T17:07:31",
+    "id": "c7f5002islgiu2cv09ue0i4tek1iqf7m",
+    "value": 12.705172707675798
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T17:12:31",
+    "id": "it8q6c2ceu3ietmsdj03osjdfo63tqbs",
+    "value": 13.102128492004901
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T17:17:31",
+    "id": "ctt2uejd7d12aqljc9n5sv50265do7du",
+    "value": 13.074629580702055
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T17:22:31",
+    "id": "7o3jifr7tho13iidmvhufs62v0a4tu61",
+    "value": 13.251970968033751
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T17:27:31",
+    "id": "1hqv1iaj4k62deb6vefn5au1png150ut",
+    "value": 13.15613060057593
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T17:32:31",
+    "id": "hs2g59hr2o18q3vo7ci87i62n6cr0tqv",
+    "value": 13.079675431308326
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T17:37:31",
+    "id": "9vv46tro894k63jin0p4i9efc8j5e0cs",
+    "value": 13.384124942649331
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T17:47:31",
+    "id": "avmnls76gtf4ju6b3ta7arc5smv3sueq",
+    "value": 13.213624936583114
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T17:52:31",
+    "id": "t7v2vfcs4l4l11566bioas8koetnvikm",
+    "value": 13.446622166556603
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T17:57:31",
+    "id": "36lb9veq3eteubs3l9229gjrujqnbk0n",
+    "value": 13.464472327460697
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T18:02:31",
+    "id": "li14b5smuceklltvgvnoce82oefdk3j4",
+    "value": 13.16513503697186
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T18:07:31",
+    "id": "t57ivfllg74ov5osc1jut3arvf38vhbm",
+    "value": 13.18745473788401
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T18:12:31",
+    "id": "qt97in9c8bo9pladm4mnf5j7gm27ijnm",
+    "value": 13.310178121300773
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T18:17:31",
+    "id": "66eu1mn9l2aff71j6s3hasioc5s9vpqe",
+    "value": 13.167802068730946
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T18:22:31",
+    "id": "an4op6hmk6hb1e99tsb41d09cm5ln1o3",
+    "value": 12.99989220847784
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T18:27:31",
+    "id": "5joemsh4kcsb9rfcqd58r0ua3eu2opdc",
+    "value": 13.228537211236976
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T18:32:30",
+    "id": "ou8m1qmab0sq27ihrl2lfhb62tmve6od",
+    "value": 13.701773881132134
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T18:37:30",
+    "id": "d2054afhnag2pob72pvg012hklhv1bfm",
+    "value": 13.689795754736036
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T18:42:30",
+    "id": "cp2dili1ujd21hlo6s8inhhuub8l6dal",
+    "value": 12.511897040931139
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T18:47:30",
+    "id": "qlfv0fk977jmgl19l3gl6226sisvg96v",
+    "value": 11.995750200486887
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T18:52:30",
+    "id": "49arhhiv90655jgum6vfdskoei1j6sf7",
+    "value": 11.604360634899512
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T18:57:30",
+    "id": "iv8k6q90vqchourmhju2be58mnqvch33",
+    "value": 11.327438814892107
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T19:02:30",
+    "id": "e453kft6ijvmkh3lf5su0q3c5kpal6ij",
+    "value": 10.914891954292173
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T19:07:30",
+    "id": "85a88s3svgs27e075841u195tglbj2s8",
+    "value": 10.306670276461412
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T19:12:30",
+    "id": "n0d9jiurltvh0eb6s467s10a1d0ob46f",
+    "value": 9.760029754316157
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T19:17:30",
+    "id": "a6ou99f05407rgku0vn91n04bghfgtmr",
+    "value": 9.843788594113716
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T19:22:30",
+    "id": "lfrodsmiig077od50oq5cnmca1337brv",
+    "value": 9.417729986838948
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T19:27:30",
+    "id": "73vcherdpj9d49egj39ckjn62uofed71",
+    "value": 9.529241241868869
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T19:32:30",
+    "id": "12a7av58pffalmvk3ok37nitjabi2qab",
+    "value": 9.589907203775358
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T19:37:30",
+    "id": "3klabc40jr9agm5k5l2qb0rrr2h9hpqp",
+    "value": 9.51809077486288
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T19:42:30",
+    "id": "7k2cfuo9g6kpk2dect0690brki7o6bjo",
+    "value": 9.681157045196493
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T19:47:30",
+    "id": "hjf4ionlgmu18inr0d5vh10mpsbd502i",
+    "value": 9.66460895893185
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T19:52:30",
+    "id": "jbbtc99lvvfd64vdvv7cs3hpl88gni1u",
+    "value": 9.581224772222994
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T19:57:30",
+    "id": "a6jdo7b77e19ij5osf9mbh9oe3h44vku",
+    "value": 9.534844724954056
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T20:02:30",
+    "id": "636p5ogfaffv0cgebo26hnhsjrv711ej",
+    "value": 9.961496801148126
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T20:07:30",
+    "id": "tk8q3vqg5i93bepj4c730hcuun0jann6",
+    "value": 9.689494778771714
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T20:12:30",
+    "id": "agq84n7oavtvh99ai8u4mg3n0i38erfv",
+    "value": 9.598285345536267
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T20:17:30",
+    "id": "aucg36864g4lns2julnbpoceie0aam6v",
+    "value": 9.581940931905647
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T20:22:30",
+    "id": "11fg75bidnvskjpig4bcclij7n693ukq",
+    "value": 9.659278436856962
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T20:27:30",
+    "id": "qr4maglm6p5ugub88cr1ea94vavs409l",
+    "value": 9.740555584756963
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T20:32:30",
+    "id": "98k6lbh634jp58ej1d9ts2pi4c51qigi",
+    "value": 9.684528287122976
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T20:37:30",
+    "id": "9f29vetb01q9gng7oqqb0e2avo3v32bg",
+    "value": 9.987212882155386
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T20:42:30",
+    "id": "eaddoaqkmcrj7m5q8pr967vfokjjg23i",
+    "value": 10.221976196182627
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T20:47:30",
+    "id": "gt7a91s7poo6dovcicesri8egqfrjbuo",
+    "value": 10.03193666757588
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T20:52:30",
+    "id": "naok6esfr14o13er3h5q7ioo579rq2q5",
+    "value": 10.004040959182316
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T20:57:30",
+    "id": "dpof8k9mullgineefg93qdht4sl8t3sr",
+    "value": 9.765308598938313
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T21:02:30",
+    "id": "sksoi8c1b4mfh5eenp2tulc2q09btr6m",
+    "value": 9.464769589709867
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T21:07:30",
+    "id": "miji0t1cabosmfba3jgihjrvbg6i7ab7",
+    "value": 9.426253246398156
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T21:12:30",
+    "id": "85jnarcspuj5e837pvbebpvsi53k9ncj",
+    "value": 9.78827227245875
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T21:17:30",
+    "id": "3gncalju9t2k2buber0g6kmbn4kqua0f",
+    "value": 9.284220257902378
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T21:22:30",
+    "id": "00jdj05mm207p533pggmm77mijbds1jj",
+    "value": 8.853931315650707
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T21:27:30",
+    "id": "sqt71n6b3g91uac126962d3g0m3bkr1j",
+    "value": 8.603333135401236
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T21:32:30",
+    "id": "muvvso3p2qnv3c3o0n7vm67hkacopji5",
+    "value": 8.488051788872989
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T21:37:30",
+    "id": "9idbh0oa0d36kc9k88n59lev8tjo3v08",
+    "value": 8.222236051778609
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T21:42:30",
+    "id": "ies0366uds0rfk2621l6h3vi03qcp04k",
+    "value": 7.752911017722389
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T21:47:30",
+    "id": "ht0ngue27r8ucaqdrg8urg2h51j80s7f",
+    "value": 7.492052983557388
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T21:52:31",
+    "id": "d85vbm5e5g1tbc6vb645gnde5dr40hf9",
+    "value": 7.1065704697466385
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T21:57:30",
+    "id": "0oih8f03ql0tgbkiq1v04itccqjkegqa",
+    "value": 7.019459790776965
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T22:02:30",
+    "id": "3lcp2kh8rgfhrth4bf65q2iquhkmnic9",
+    "value": 6.7571718516829335
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T22:07:30",
+    "id": "f4g68gikr2t6p4thsiqeg8lus8eapedt",
+    "value": 6.870253947167874
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T22:12:30",
+    "id": "sv8hlsc71g79ifb0t4tao8i1t0d19drr",
+    "value": 7.2089061835199475
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T22:17:30",
+    "id": "qsf8hlceebqt824f4cbj9mtua7hg5928",
+    "value": 7.359428975821758
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T22:22:30",
+    "id": "aijc3kdn3cfrs2o0lo8eqe78iectnciq",
+    "value": 7.685861799232433
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T22:27:30",
+    "id": "7c13al1hrai9ulpkl9a2dp0el6ktc7tf",
+    "value": 7.761166865455093
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T22:32:30",
+    "id": "r3jshetvv2dqg0rk4ttfu6oqpe93hma3",
+    "value": 8.358559922977015
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T22:37:30",
+    "id": "heb9nren4642cdtvb0114kfatn1i7hep",
+    "value": 8.260866956032894
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T22:42:30",
+    "id": "jcdid4i1q94qhfr0o11e1frpejqmqopi",
+    "value": 8.74341780454564
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T22:47:30",
+    "id": "be2mu2oss4nho7i0m79jsr581lesb8p2",
+    "value": 8.510029529373746
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T22:52:30",
+    "id": "n3gddqbd8pm1haminc73fsel7kcs3i0h",
+    "value": 7.894160468035984
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T22:57:30",
+    "id": "j8ti3o8nt5kks174d3tip0rbl3hdprab",
+    "value": 7.144810223526524
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T23:02:30",
+    "id": "i22nv0ai7lhqc23e4mpc5jmgq8gfiqnc",
+    "value": 6.765820952790814
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T23:07:30",
+    "id": "gog7uephb87nma5bdh01lkugolv1ju82",
+    "value": 6.703968583567574
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T23:12:30",
+    "id": "rmnkkcnheqt2snmboo83npjml28kt6ei",
+    "value": 6.165448416295004
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T23:17:30",
+    "id": "b8ptstpnaj8hs7r2bcltg1ecdcgkrsda",
+    "value": 6.411341166080661
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T23:22:30",
+    "id": "bb3aulf89siulj065hk5pjjgp9m619vl",
+    "value": 5.755171082520511
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T23:27:30",
+    "id": "j42vjd75i2sac6b79ci2f76f2pqj7una",
+    "value": 5.948889499073066
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T23:32:30",
+    "id": "pobubnds93u19j0vi38gg8e5o47ah1ho",
+    "value": 5.949896192899179
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T23:37:30",
+    "id": "4m2jfbst86018sl911upch4mn9l95igb",
+    "value": 6.290730127498028
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T23:42:30",
+    "id": "0osl0938ij7on5smgc8esel29dosl8d3",
+    "value": 6.396766224534341
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T23:47:30",
+    "id": "74tdtllibea1svkl0k8r1b3p34115gsd",
+    "value": 7.064070759205133
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T23:52:30",
+    "id": "ule88rcmar1nvuo0a3pqjd9lpri3s7m9",
+    "value": 7.365760852846704
+  },
+  {
+    "deviceId": "DexG4Rec_SM45143452",
+    "type": "cbg",
+    "units": "mmol/L",
+    "time": "2015-12-04T23:57:30",
+    "id": "2njlffuvas2sj0mm1095g56qbp0g3k92",
+    "value": 7.936902912231104
+  }
+]

@@ -1,0 +1,72 @@
+---
+title: 'Dataflow: Data Donation'
+output:
+  html_document:
+    df_print: paged
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook demonstrating access to a Semantic Container.
+
+```{r init, echo=FALSE, message=FALSE,  include=FALSE}
+# helper functions ==================
+
+# default headers for a HTTP request when accessing a Semantic Container
+defaultHeaders <- function(token) {
+        c('Accept'        = '*/*',
+          'Content-Type'  = 'application/json',
+          'Authorization' = paste('Bearer', token))
+}
+
+# retrieve OAuth2 Token
+getToken <- function(semcon_url, app_key, app_secret) {
+        auth_url <- paste0(semcon_url, '/oauth/token')
+        # reduce response timeout to 10s to avoid hanging app
+        # https://curl.haxx.se/libcurl/c/CURLOPT_CONNECTTIMEOUT.html
+        optTimeout <- RCurl::curlOptions(connecttimeout = 10)
+        response <- tryCatch(
+                RCurl::postForm(auth_url,
+                                client_id     = app_key,
+                                client_secret = app_secret,
+                                grant_type    = 'client_credentials',
+                                .opts         = optTimeout),
+                error = function(e) { return(NA) })
+        if (is.na(response)) {
+                return(NA)
+        } else {
+                if(jsonlite::validate(response[1])){
+                        return(jsonlite::fromJSON(response[1])$access_token)
+                } else {
+                        return(NA)
+                }
+        }
+}
+
+semcon_url <- 'http://localhost:4500'
+# retrieve OAuth2 credentials with the following command:
+# APP_KEY: docker logs df1_org1_cloud 2>/dev/null | grep ^APP_KEY | awk -F " " '{print $NF}'
+# APP_SECRET: docker logs df1_org1_cloud 2>/dev/null | grep ^APP_SECRET | awk -F " " '{print $NF}'
+key <- '{paste APP-KEY here}' 
+secret <- '{paste APP-SECRET here}'
+
+token <- getToken(semcon_url, key, secret)
+data_url <- paste0(semcon_url, '/api/data/plain')
+header <- RCurl::basicHeaderGatherer()
+
+data <- tryCatch(RCurl::getURI(data_url,
+                               .opts=list(httpheader = defaultHeaders(token)),
+                               headerfunction = header$update),
+                 error = function(e) { return(NA) })
+df <- as.data.frame(jsonlite::fromJSON(data))
+df$dt <- as.POSIXct(df$time, format="%Y-%m-%dT%H:%M:%S")
+```
+
+The Semantic Container holds `r nrow(df)` records.
+
+```{r plot, echo=FALSE}
+library(ggplot2)
+library(scales)
+ggplot(df, aes(x=dt, y=value, group=1)) + 
+        scale_x_datetime(labels=date_format("%d.%m.%y"), name="") + 
+        geom_line(color = "#00AFBB", size = 1) + 
+        theme_minimal()
+```
