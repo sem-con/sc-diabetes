@@ -1,0 +1,24 @@
+cd ~/semcon/projects/MyPCH/sc-diabetes/dataflows/Personal_Data
+
+## CREATE DATA SUBSET
+jq '.[:50]' df2_data.json > df2_data_small.json
+
+## WRITE PERSONAL DIABETES DATA INTO LOCAL CONTAINER
+
+# start semantic container
+docker rm -f df2_pwd_local_sparql
+IMAGE=semcon/sc-sparql:latest; docker run -d --name df2_pwd_local_sparql -e IMAGE_SHA256="$(docker image ls --no-trunc -q $IMAGE | cut -c8-)" -e IMAGE_NAME=$IMAGE -p 4000:3000 -p 4040:3030 $IMAGE /bin/init.sh "$(< df2_pwd_local_sparql_init.trig)"
+
+# get status
+docker logs -f df2_pwd_local_sparql
+curl http://localhost:4000/api/active
+
+# write data
+cat df2_data_small.json | curl -H "Content-Type: application/json" -d @- -X POST http://localhost:4000/api/data
+
+## QUERY data
+
+# simple query
+curl -s 'http://localhost:4000/api/sparql/query?r=true&a=http://localhost:3000/api/data&q=SELECT%20%2A%20WHERE%20%7B%20%3Fa%20%3Fb%20%3Fc%7D%20LIMIT%2010' | jq
+
+curl http://localhost:4040/rdf/sparql?query=SELECT%20*%20WHERE%20%7B%20?a%20?b%20?c%7D%20LIMIT%2010
