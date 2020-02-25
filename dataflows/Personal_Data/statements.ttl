@@ -1,0 +1,49 @@
+@prefix : <http://w3id.org/semcon/mypch/resource/> .
+@prefix mypch: <http://w3id.org/semcon/mypch/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:data-1 a mypch:Observation;
+  mypch:Resource.id "data-1";
+  mypch:Observation.code :cbg;
+  mypch:Observation.effectiveDateTime "2015-12-12T00:00:01"^^xsd:dateTime;
+  mypch:Observation.performer :DexG4Rec_SM45143452;
+  mypch:Observation.valueQuantity [
+    mypch:Quantity.unit "mmol/L";
+    mypch:Quantity.value 7.5;
+  ];
+.
+
+:data-2 a mypch:Observation;
+  mypch:Resource.id "data-2";
+  mypch:Observation.code :cbg;
+  mypch:Observation.effectiveDateTime "2015-12-12T12:00:03"^^xsd:dateTime;
+  mypch:Observation.performer :DexG4Rec_SM45143452;
+  mypch:Observation.valueQuantity [
+    mypch:Quantity.unit "mmol/L";
+    mypch:Quantity.value 8.5
+  ];
+.
+
+:data-3 a mypch:Observation;
+  mypch:Resource.id "data-3";
+  mypch:Observation.code :cbg;
+  mypch:Observation.effectiveDateTime "2015-12-12T22:00:03"^^xsd:dateTime;
+  mypch:Observation.performer :DexG4Rec_SM45143452;
+  mypch:Observation.valueQuantity [
+    mypch:Quantity.unit "mmol/L";
+    mypch:Quantity.value 11.9
+  ];
+.
+
+:data-4 a mypch:Observation;
+  mypch:Resource.id "data-4";
+  mypch:Observation.code :cbg;
+  mypch:Observation.effectiveDateTime "2015-12-13T00:00:03"^^xsd:dateTime;
+  mypch:Observation.performer :DexG4Rec_SM45143452;
+  mypch:Observation.valueQuantity [
+    mypch:Quantity.unit "mmol/L";
+    mypch:Quantity.value 12.5
+  ];
+.
+

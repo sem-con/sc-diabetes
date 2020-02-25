@@ -1,0 +1,6 @@
+PREFIX mypch: <http://w3id.org/semcon/mypch/ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select * where { 
+    ?s mypch:Observation.valueQuantity/mypch:Quantity.value ?o .
+    FILTER(?o >= 6.0 && ?o <= 6.5)
+}

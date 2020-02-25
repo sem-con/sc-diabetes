@@ -1,0 +1,45 @@
+{
+    "name":"Diabetes",
+    "identifier":"oyd.diabetes",
+    "language":"en",
+    "version":"0.1.0",
+    "description":"Collect and visualize diabetes data.",
+    "info_url":"https://www.ownyourdata.eu/en/plugins/diabetes",
+    "picture":"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "permissions":[ 
+        "oyd.diabetes.*:*"
+    ],
+    "sources":[
+        {
+            "name":"Diabetes",
+            "identifier":"oyd.source.diabetes",
+            "description":"collect your diabetes data",
+            "type":"push",
+            "inactive_duration":31,
+            "inactive_text":"Last month you have not collected any diabetes data. Check your device!",
+            "config":{
+                "form":"",
+                "fields":[],
+                "defaults":{
+                    "diabetes":{
+                        "repo_name":"Diabetes",
+                        "repo_identifier":"oyd.diabetes",
+                        "repo_encryption":"true"
+                    }
+                },
+                "repos":{
+                    "diabetes":{
+                        "name":"[DEFAULT_TEXT_REPO_NAME]",
+                        "identifier":"[DEFAULT_TEXT_REPO_IDENTIFIER]",
+                        "encryption":"[DEFAULT_TEXT_REPO_ENCRYPTION]"
+                    }
+                }
+            }
+        }
+    ],
+    "views":[],
+    "mobiles":[],
+    "tasks":[],
+    "answers":[],
+    "reports":[]
+}
