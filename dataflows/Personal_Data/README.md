@@ -1,3 +1,5 @@
+Source URL: https://github.com/sem-con/sc-diabetes/blob/master/dataflows/Personal_Data/README.md
+
 # Dataflow: Personal Data
 
 ## Introduction
@@ -20,7 +22,7 @@ The figure below depicts a graphical representation of the Personal Data dataflo
 ## Stakeholders
 The following stakeholders are part of the dataflow:
 
-* **PwD** (Person with Diabetes) provides diabetes data in format described in the [Data Donation dataflow](https://github.com/sem-con/sc-diabetes/tree/master/dataflows/Data_Donation#stakeholders)    
+* **PwD** (Person with Diabetes) provides diabetes data in format described in the [Tidepool Integration dataflow](https://github.com/sem-con/sc-diabetes/tree/master/dataflows/Tidepool_Integration#stakeholders)    
 * **OwnYourData** is a Personal Data Store provider: [OwnYourData Data Vault](https://data-vault.eu/en) (alternatives: [Personium](https://personium.io/en/index.html), [Freezr](http://www.freezr.info/))    
 
 

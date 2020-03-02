@@ -1,3 +1,5 @@
+Source URL: https://github.com/sem-con/sc-diabetes/blob/master/dataflows/Data_Donation/README.md
+
 # Dataflow: Data Donation
 
 ## Introduction
@@ -12,24 +14,12 @@ The Data Donation dataflow demonstrates the following capabilities of Semantic C
 
 The figure below depicts a graphical representation of the Data Donation dataflow.
 
-![](data_donation.png?raw=true)
+<kbd><img src="data_donation.png"></kbd>
 
 ## Stakeholders
 The following stakeholders are part of the dataflow:
 
-* **PwD** (Person with Diabetes) provides diabetes data in the following format:
-    ```
-    [
-      {
-        "deviceId": "DexG4Rec_SM45143452",
-        "type": "cbg",
-        "units": "mmol/L",
-        "time": "2015-12-13T23:57:03",
-        "id": "31m9q74cs8lslujphb90c6pg1u5fhatt",
-        "value": 11.323525901732888
-      }, { ... }
-    ]
-    ```
+* **PwD** (Person with Diabetes) provides diabetes data in format described in the [Tidepool Integration dataflow](https://github.com/sem-con/sc-diabetes/tree/master/dataflows/Tidepool_Integration#stakeholders)    
 
 * **Organization** an organization that receives a diabetes data donation from a PwD    
 
