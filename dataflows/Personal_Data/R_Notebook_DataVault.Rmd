@@ -4,22 +4,48 @@ output:
   html_document:
     df_print: paged
 ---
+```{r config, echo=FALSE, message=FALSE,  include=FALSE}
+# configuration variables ==================
+pia_url <- 'https://data-vault.eu'
+app_key <- '6nRM96eL8WJDlpdivN-u43TRgOw6WzPx5SMtKL-Xkxs' # '{paste APP-KEY from Diabetes plugin here}'
+app_secret <- 'sgPxTb0zVawplN9S9h1l84kofsEEDSuyJOS7inSoYoU' # '{paste APP-SECRET from Diabetes plugin here}'
+password <- 'asdf123'
+repo <- 'oyd.diabetes'
+```
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook demonstrating access to a Semantic Container.
+```{r helper, echo=FALSE, message=FALSE,  include=FALSE}
+# helper functions from the oydapp R-package (https://github.com/OwnYourData/oydapp)
 
-```{r init, echo=FALSE, message=FALSE,  include=FALSE}
-# helper functions ==================
-
-# default headers for a HTTP request when accessing a Semantic Container
+# Low-level functions to access PIA =======================
+# used header for GET and POST requests
 defaultHeaders <- function(token) {
         c('Accept'        = '*/*',
           'Content-Type'  = 'application/json',
           'Authorization' = paste('Bearer', token))
 }
 
-# retrieve OAuth2 Token
-getToken <- function(url, app_key, app_secret) {
-        auth_url <- paste0(url, '/oauth/token')
+# URL to access a repo
+itemsUrl <- function(url, repo_name) {
+        paste0(url, '/api/repos/', repo_name, '/items')
+}
+
+# add parameter to URL
+addUrlParam <- function(url, param, value){
+        if(grepl('?', url, fixed = TRUE)){
+                paste0(url, '&', param, '=', value)
+        } else {
+                paste0(url, '?', param, '=', value)
+        }
+}
+
+# extract URL from repo URL
+repoFromUrl <- function(url) {
+        sub(".*?/api/repos/(.*?)/items", "\\1", url, perl = TRUE)
+}
+
+# request token for a plugin (app)
+getToken <- function(pia_url, app_key, app_secret) {
+        auth_url <- paste0(pia_url, '/oauth/token')
         # reduce response timeout to 10s to avoid hanging app
         # https://curl.haxx.se/libcurl/c/CURLOPT_CONNECTTIMEOUT.html
         optTimeout <- RCurl::curlOptions(connecttimeout = 10)
@@ -41,31 +67,386 @@ getToken <- function(url, app_key, app_secret) {
         }
 }
 
-datavault_url <- 'https://data-vault.eu'
-# retrieve OAuth2 credentials with the following command:
-# APP_KEY: docker logs df1_org1_cloud 2>/dev/null | grep ^APP_KEY | awk -F " " '{print $NF}'
-# APP_SECRET: docker logs df1_org1_cloud 2>/dev/null | grep ^APP_SECRET | awk -F " " '{print $NF}'
-key <- '{paste APP-KEY from Diabetes plugin here}' 
-secret <- '{paste APP-SECRET from Diabetes plugin here}'
+# private key for encryption
+getPrivatekey <- function(app, pwd){
+        headers <- defaultHeaders(app$token)
+        user_url <- paste0(app$url, '/api/users/current')
+        header <- RCurl::basicHeaderGatherer()
+        doc <- tryCatch(
+                RCurl::getURI(user_url,
+                              .opts=list(httpheader = headers),
+                              headerfunction = header$update),
+                error = function(e) { return(NA) })
+        if(!is.na(doc)){
+                if(header$value()[['status']] == '200'){
+                        retVal <- jsonlite::fromJSON(doc)
+                        message <- retVal$password_key
+                        msgDecrypt(message, pwd)
+                } else {
+                        ''
+                }
+        } else {
+                ''
+        }
+}
 
-token <- getToken(datavault_url, key, secret)
-data_url <- paste0(datavault_url, '/api/repos/oyd.diabetes/items')
-header <- RCurl::basicHeaderGatherer()
+# vector with all plugin (app) infos to access PIA
+setupApp <- function(pia_url, app_key, app_secret, keyItems) {
+        app_token <- getToken(pia_url,
+                              app_key,
+                              app_secret)
+        if(is.na(app_token)){
+                list()
+        } else {
+                list('url'        = pia_url,
+                     'app_key'    = app_key,
+                     'app_secret' = app_secret,
+                     'token'      = app_token,
+                     'encryption' = keyItems)
+        }
+}
 
-data <- tryCatch(RCurl::getURI(data_url,
-                               .opts=list(httpheader = defaultHeaders(token)),
-                               headerfunction = header$update),
-                 error = function(e) { return(NA) })
-df <- as.data.frame(jsonlite::fromJSON(data))
+# Read and CRUD Operations for a Plugin (App) =============
+# convert response string into data.frame
+r2d <- function(response){
+        if (is.na(response)) {
+                data.frame()
+        } else {
+                if (nchar(response) > 0) {
+                        retVal <- jsonlite::fromJSON(response)
+                        if(length(retVal) == 0) {
+                                data.frame()
+                        } else {
+                                if ('error' %in% names(retVal)) {
+                                        data.frame()
+                                } else {
+                                        if ('message' %in% names(retVal)) {
+                                                if (retVal$message ==
+                                                    'error.accessDenied') {
+                                                        data.frame()
+                                                } else {
+                                                        # convert list to data.frame
+                                                        tmp <- jsonlite::fromJSON(response)
+                                                        if(typeof(tmp) == 'character'){
+                                                                tmp <- lapply(tmp, jsonlite::fromJSON)
+                                                        }
+                                                        if(typeof(tmp) == 'list'){
+                                                                data.table::rbindlist(tmp, fill=TRUE)
+                                                        } else {
+                                                                tmp
+                                                        }
+                                                }
+                                        } else {
+                                                # convert list to data.frame
+                                                tmp <- jsonlite::fromJSON(response)
+                                                if(typeof(tmp) == 'character'){
+                                                        tmp <- lapply(tmp, jsonlite::fromJSON)
+                                                }
+                                                if(typeof(tmp) == 'list'){
+                                                        data.table::rbindlist(tmp, fill=TRUE)
+                                                } else {
+                                                        tmp
+                                                }
+                                        }
+                                }
+                        }
+                } else {
+                        data.frame()
+                }
+        }
+}
+
+oydDecrypt <- function(app, repo_url, data, show_progress = FALSE){
+        privateKey <- getReadKey(app$encryption,
+                                 repoFromUrl(repo_url))
+        errorMsg <- ''
+        warningMsg <- ''
+        retVal <- data.frame()
+
+        if(length(privateKey) == 1){
+                testJSON <- as.character(data[1, 'value'])
+                if(jsonlite::validate(testJSON)){
+                        data$json <- as.character(data$value)
+                } else {
+                        errorMsg <- 'msgMissingKey'
+                }
+        } else {
+                if(is.null(data$nonce) || anyNA(data$nonce)){
+                        data$json <- as.character(data$value)
+                        warningMsg <- 'msgUnencryptedDataWithKey'
+                } else {
+                        authKey <- sodium::pubkey(
+                                sodium::sha256(charToRaw('auth')))
+                        decryptError <- FALSE
+                        data$json <- tryCatch(
+                                apply(data, 1, function(x) {
+                                        cipher <- str2raw(as.character(
+                                                x['value']))
+                                        nonce <- str2raw(as.character(
+                                                x['nonce']))
+                                        tryCatch(
+                                                rawToChar(sodium::auth_decrypt(
+                                                        cipher,
+                                                        privateKey,
+                                                        authKey,
+                                                        nonce)),
+                                                error = function(e) {
+                                                        return('oyd_error')
+                                                })
+                                }),
+                                error = function(e) {
+                                        decryptError <<- TRUE
+                                        return(NA) })
+                        data <- tryCatch(
+                                data[data$json != 'oyd_error', ],
+                                error = function(e) {
+                                        return(data.frame())
+                                })
+                        if(decryptError){
+                                errorMsg <- 'msgDecryptError'
+                        }
+                }
+        }
+        if(nchar(errorMsg) == 0){
+                parseError <- FALSE
+                retVal <- tryCatch(
+                        dplyr::bind_rows(
+                                lapply(
+                                        lapply(
+                                                lapply(data$json,
+                                                       jsonlite::fromJSON),
+                                                function(x) t(x)),
+                                        data.frame)),
+                        error = function(e) {
+                                parseError <<- TRUE
+                                return(data.frame()) })
+                if(parseError){
+                        errorMsg <- 'msgCantParseJSON'
+                } else {
+                        cn <- colnames(retVal)
+                        retVal <- as.data.frame(t(do.call(rbind.data.frame,
+                                lapply(retVal, function(x) {unlist(x)}))),
+                                row.names = "")
+                        colnames(retVal) <- cn
+                        retVal$id <- data$id
+                        retVal$created_at <- data$created_at
+                }
+        }
+        if(nchar(errorMsg) > 0){
+                attr(retVal, "error") <- errorMsg
+        }
+        if(nchar(warningMsg) > 0){
+                attr(retVal, "warning") <- warningMsg
+        }
+        retVal
+}
+
+# read raw data from PIA
+readRawItems <- function(app, repo_url, show_progress=FALSE) {
+        page_size <- 2000
+        headers <- defaultHeaders(app$token)
+        url_data <- addUrlParam(repo_url, 'size', page_size)
+        header <- RCurl::basicHeaderGatherer()
+        doc <- tryCatch(
+                RCurl::getURI(url_data,
+                              .opts=list(httpheader = headers),
+                              headerfunction = header$update),
+                error = function(e) { return(NA) })
+        response <- NA
+        respData <- data.frame()
+        if(!is.na(doc)){
+                if(header$value()[['status']] == '200'){
+                        recs <- tryCatch(
+                                as.integer(header$value()[['Total-Count']]),
+                                error = function(e) { return(0) })
+                        if(recs == 0){
+                                recs <- tryCatch(
+                                        as.integer(header$value()[['total-count']]),
+                                        error = function(e) { return(0) })
+                        }
+                        if(recs > page_size) {
+                                page_count <- floor(recs/page_size)
+                                for(page in 1:(page_count+1)){
+                                        url_data <- addUrlParam(repo_url, 'page', page)
+                                        url_data <- addUrlParam(url_data, 'size', page_size)
+                                        response <- tryCatch(
+                                                RCurl::getURL(
+                                                        url_data,
+                                                        .opts=list(httpheader=headers)),
+                                                error=function(e){ return(NA) })
+                                        subData <- r2d(response)
+                                        if(nrow(respData)>0){
+                                                respData <- data.table::rbindlist(list(respData, subData), fill=TRUE)
+                                        } else {
+                                                respData <- subData
+                                        }
+                                }
+                        } else {
+                                response <- tryCatch(
+                                        RCurl::getURL(
+                                                url_data,
+                                                .opts=list(httpheader=headers)),
+                                        error = function(e) { return(NA) })
+                                respData <- r2d(response)
+                        }
+                } else {
+                        if(is.null(jsonlite::fromJSON(doc)$statusMessage)){
+                                if(is.null(jsonlite::fromJSON(doc)$error)){
+                                        attr(respData, 'error') <-
+                                                jsonlite::fromJSON(doc)$message
+                                } else {
+                                        attr(respData, 'error') <-
+                                                jsonlite::fromJSON(doc)$error
+                                }
+                        } else {
+                                attr(respData, 'error') <-
+                                        jsonlite::fromJSON(doc)$statusMessage
+                        }
+                }
+        }
+        respData
+}
+
+# read data from PIA and decrypt if possible
+readItems <- function(app, repo_url, show_progress=FALSE) {
+        if (length(app) == 0) {
+                data.frame()
+                return()
+        }
+        respData <- readRawItems(app, repo_url, show_progress)
+        if(nrow(respData) > 0){
+                if('version' %in% colnames(respData)){
+                        if(is.na(respData[1, 'version'])){
+                                data.frame()
+                        } else {
+                                if(!exists("oydDataVersion")){
+                                        oydDataVersion <- "0.4"
+                                }
+                                if(respData[1, 'version'] == oydDataVersion){
+                                        oydDecrypt(app, repo_url, respData, show_progress)
+                                } else {
+                                        respData
+                                }
+                        }
+                } else {
+                        respData
+                }
+        } else {
+                respData
+        }
+}
+
+
+# Key handling ============================================
+str2raw <- function(str){
+        if(grepl("^[0-9a-f]+$", str, perl = TRUE)){
+                as.raw(strtoi(sapply(
+                        seq(1, nchar(str), by=2),
+                        function(x) substr(str, x, x+1)), 16L))
+        } else {
+                raw(0)
+        }
+}
+
+getKey <- function(crypt, repo){
+        key <- ''
+        read <- NA
+        if(!is.null(crypt)) {
+                if(class(crypt) == 'data.frame'){
+                        if(nrow(crypt) > 0){
+                                crypt$n <- unlist(lapply(as.character(crypt$repo),
+                                                         nchar))
+                                crypt <- crypt[with(crypt,
+                                                    order(-n, repo)), ]
+                                for(i in 1:nrow(crypt)){
+                                        if(grepl(paste0('^',
+                                                        crypt[i,'repo']),
+                                                 repo)){
+                                                key <- crypt[i, 'key']
+                                                read <- crypt[i, 'read']
+                                                break
+                                        }
+                                }
+                        }
+                }
+        }
+        list(key  = key,
+             read = read)
+}
+
+getReadKey <- function(crypt, repo){
+        retValWrite <- getKey(crypt, repo)
+        if(is.na(retValWrite$read)){
+                NA
+        } else {
+                cryptRead <- crypt[crypt$read == 'TRUE' |
+                                   crypt$read == TRUE, ]
+                retValRead <- getKey(cryptRead, repo)
+                if(retValWrite$key == retValRead$key){
+                        if(nchar(as.character(retValRead$key)) != 64){
+                                sodium::sha256(charToRaw(as.character(
+                                        retValRead$key)))
+                        } else {
+                                str2raw(retValRead$key)
+                        }
+                } else {
+                        NA
+                }
+        }
+}
+
+msgDecrypt <- function(input, key){
+        if (key == '') {
+                return('')
+        } else {
+                cipherHex <- jsonlite::fromJSON(input)$value
+                nonceHex <- jsonlite::fromJSON(input)$nonce
+                if (is.null(cipherHex) | is.null(nonceHex)) {
+                        return('')
+                } else {
+                        private_key <- sodium::sha256(charToRaw(key))
+                        auth_private_key <- sodium::sha256(charToRaw('auth'))
+                        auth_key <- sodium::pubkey(auth_private_key)
+                        nonce <- as.raw(strtoi(sapply(
+                                seq(1, nchar(nonceHex), by=2),
+                                function(x) substr(nonceHex, x, x+1)), 16L))
+                        cipher <- as.raw(strtoi(sapply(
+                                seq(1, nchar(cipherHex), by=2),
+                                function(x) substr(cipherHex, x, x+1)), 16L))
+                        tryCatch(rawToChar(
+                                sodium::auth_decrypt(cipher, private_key, auth_key, nonce)),
+                                error = function(e) {
+                                        return('') })
+                }
+        }
+}
 ```
 
-The Data Vaults stores `r nrow(df)` records in the Diabetes repo.
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook demonstrating access to the OwnYourData Data Vault.
 
-```{r plot, echo=FALSE}
+```{r init, echo=FALSE, message=FALSE,  include=FALSE}
+app <- setupApp(pia_url, app_key, app_secret, data.frame())
+keyItems <- data.frame(
+                repo = as.character(repo),
+                key  = getPrivatekey(app, password),
+                read = TRUE,
+                stringsAsFactors = FALSE)
+app$encryption <- keyItems
+repo_url <- itemsUrl(pia_url, repo)
+data <- readItems(app, repo_url)
+```
+
+The Data Vaults stores `r nrow(data)` records in the Diabetes repo.
+
+```{r plot, echo=FALSE, warning=FALSE}
 library(ggplot2)
 library(scales)
-ggplot(df, aes(x=dt, y=value, group=1)) + 
+ggplot(data, 
+       aes(x=as.POSIXct(as.character(data$time),format="%Y-%m-%dT%H:%M:%OS"), 
+           y=as.double(as.character(data$value)), 
+           group=1)) + 
         scale_x_datetime(labels=date_format("%d.%m.%y"), name="") + 
+        ylab("cgm (mg/dL)") +
         geom_line(color = "#00AFBB", size = 1) + 
         theme_minimal()
 ```

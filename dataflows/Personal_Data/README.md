@@ -136,10 +136,10 @@ This section provides example commands to demonstrate the functionality describe
 
         curl "http://localhost:4040/rdf/sparql?query=PREFIX%20mypch%3A%20%3Chttp%3A%2F%2Fw3id.org%2Fsemcon%2Fmypch%2Fns%23%3E%0APREFIX%20xsd%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0Aselect%20*%20where%20%7B%20%0A%20%20%20%20%3Fs%20mypch%3AObservation.effectiveDateTime%20%3Fo%20.%0A%20%20%20%20FILTER(%3Fo%20%3E%3D%20xsd%3AdateTime(%222018-09-07T03%3A00%3A00%22)%20%26%26%20%3Fo%20%3C%20xsd%3AdateTime(%222018-09-07T04%3A00%3A00%22))%0A%7D"
 
-    c) perform SPARQL query to get all records with cbg values between 6.0 and 6.5    
+    c) perform SPARQL query to get all records with cgm values below 85    
         (query: [query2.sparql](query2.sparql), percent-encoded in curl statement)
 
-        curl "http://localhost:4040/rdf/sparql?query=PREFIX%20mypch%3A%20%3Chttp%3A%2F%2Fw3id.org%2Fsemcon%2Fmypch%2Fns%23%3E%0APREFIX%20xsd%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0Aselect%20*%20where%20%7B%20%0A%20%20%20%20%3Fs%20mypch%3AObservation.valueQuantity%2Fmypch%3AQuantity.value%20%3Fo%20.%0A%20%20%20%20FILTER(%3Fo%20%3E%3D%206.0%20%26%26%20%3Fo%20%3C%3D%206.5)%0A%7D"
+        curl "http://localhost:4040/rdf/sparql?query=PREFIX%20mypch%3A%20%3Chttp%3A%2F%2Fw3id.org%2Fsemcon%2Fmypch%2Fns%23%3E%0APREFIX%20xsd%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0Aselect%20*%20where%20%7B%20%0A%20%20%20%20%3Fs%20mypch%3AObservation.valueQuantity%2Fmypch%3AQuantity.value%20%3Fo%20.%0A%20%20%20%20FILTER(%3Fo%20%3C%2085)%0A%7D"
 
 
 3. **Permanent and secure storage for personal diabetes data**    

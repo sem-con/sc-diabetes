@@ -183,7 +183,7 @@
             rr:predicateObjectMap [
                 rr:predicate param:timeFormat ;
                 rr:objectMap [
-                    rr:template "yyyy-dd-MM'T'HH:mm:ss" ;
+                    rr:template "yyyy-MM-dd'T'HH:mm:ss" ;
                     rr:datatype xsd:string ;
                 ];
             ];
