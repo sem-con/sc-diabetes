@@ -7,9 +7,9 @@ output:
 ```{r config, echo=FALSE, message=FALSE,  include=FALSE}
 # configuration variables ==================
 pia_url <- 'https://data-vault.eu'
-app_key <- '6nRM96eL8WJDlpdivN-u43TRgOw6WzPx5SMtKL-Xkxs' # '{paste APP-KEY from Diabetes plugin here}'
-app_secret <- 'sgPxTb0zVawplN9S9h1l84kofsEEDSuyJOS7inSoYoU' # '{paste APP-SECRET from Diabetes plugin here}'
-password <- 'asdf123'
+app_key <- '{paste APP-KEY from Diabetes plugin here}'
+app_secret <- '{paste APP-SECRET from Diabetes plugin here}'
+password <- '{paste login password for https://data-vault.eu here}'
 repo <- 'oyd.diabetes'
 ```
 
