@@ -124,6 +124,27 @@ module DataWriteHelper
                 endTime: Time.now.utc)
 
             createLog({"type": "write", "scope": new_items.to_s})
+
+            # if FORWARDURL is defined submit POST request
+            if ENV["FORWARDURL"].to_s != ""
+                data = getData(new_items)
+                retVal = []
+                ids = store_data.map{|h| h["id"]}.compact
+                data.each do |item|
+                    if ids.include?(item["id"].to_s)
+                        retVal << item
+                    end
+                end
+                response = HTTParty.post(
+                    ENV["FORWARDURL"].to_s, 
+                    headers: { 'Content-Type' => 'application/json',
+                               'x-tidepool-session-token' => ENV["TPTOKEN"].to_s }, 
+                    body: retVal.to_json)
+                createLog({
+                    "type": "forward",
+                    "scope": new_items.to_s})
+            end
+
             render plain: "",
                    status: 200
 

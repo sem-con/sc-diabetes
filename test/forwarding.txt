@@ -1,0 +1,30 @@
+# setup containers ===========
+# container A: forwarding container
+# container B: HDS double (just accepts data)
+
+# start forwarding container
+docker rm -f forward; \
+SC_IMAGE=semcon/sc-diabetes:latest; \
+docker run -d --name forward -p 4000:3000 \
+    -e IMAGE_SHA256="$(docker image ls --no-trunc -q $SC_IMAGE | cut -c8-)" \
+    -e IMAGE_NAME=$SC_IMAGE -e WATERMARK=true \
+    -e FORWARDURL=http://192.168.178.21:4010/api/data -e TPTOKEN=123 \
+    $SC_IMAGE /bin/init.sh "$(< forward_init.trig)"
+
+# start HDS double
+docker rm -f double; docker run -d --name double -p 4010:3000 semcon/sc-base
+
+# get credentials for A
+APP_KEY=`docker logs forward 2>/dev/null | grep ^APP_KEY | awk -F " " '{print $NF}'`; \
+APP_SECRET=`docker logs forward 2>/dev/null | grep ^APP_SECRET | awk -F " " '{print $NF}'`; \
+export PWD_TOKEN_LOCAL=`curl -X POST -s -d grant_type=client_credentials \
+    -d client_id=$APP_KEY -d client_secret=$APP_SECRET -d scope=admin \
+    http://localhost:4000/oauth/token | jq -r '.access_token'`
+echo $PWD_TOKEN_LOCAL
+
+# write data to container A
+cat data.json | \
+     curl -X POST -d @- \
+         -H "Content-Type: application/json" \
+         -H "Authorization: Bearer $PWD_TOKEN_LOCAL" \
+         http://localhost:4000/api/data
