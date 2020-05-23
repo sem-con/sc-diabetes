@@ -116,7 +116,7 @@ This section provides example commands to demonstrate the functionality describe
 
     d) retrieve information from local Semantic Container of PwD    
 
-        # number of records
+        # number of records: 3820
         curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $PWD_TOKEN_LOCAL" \
             http://localhost:4000/api/data/plain | jq -r '. | length'
 
@@ -143,9 +143,9 @@ This section provides example commands to demonstrate the functionality describe
 
         SC_IMAGE=semcon/sc-diabetes:latest; \
         docker run -d --name df1_org1_cloud -p 4500:3000 \
-            -e IMAGE_SHA256="$(docker image ls --no-trunc -q $IMAGE | cut -c8-)" \
-            -e IMAGE_NAME=$IMAGE -e AUTH=true \
-            $IMAGE /bin/init.sh "$(< df1_org1_cloud_init.trig)"
+            -e IMAGE_SHA256="$(docker image ls --no-trunc -q $SC_IMAGE | cut -c8-)" \
+            -e IMAGE_NAME=$SC_IMAGE -e AUTH=true \
+            $SC_IMAGE /bin/init.sh "$(< df1_org1_cloud_init.trig)"
 
     c) get credentials and store in `ORG_TOKEN_CLOUD`    
 
@@ -165,7 +165,7 @@ This section provides example commands to demonstrate the functionality describe
 
     e) retrieve information from cloud Semantic Container of Organization    
 
-        # number of records
+        # number of records: 3820
         curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $ORG_TOKEN_CLOUD" \
             http://localhost:4500/api/data/plain | jq -r '. | length'
 

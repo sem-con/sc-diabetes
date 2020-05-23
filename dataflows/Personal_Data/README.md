@@ -111,7 +111,7 @@ This section provides example commands to demonstrate the functionality describe
 
     d) retrieve information from local Semantic Container of PwD    
 
-        # number of records
+        # number of records: 4031
         curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $PWD_TOKEN_LOCAL" \
             http://localhost:4000/api/data/plain | jq -r '. | length'
 
@@ -131,12 +131,12 @@ This section provides example commands to demonstrate the functionality describe
             http://localhost:4000/api/data | curl -X POST -d @- \
             -H "Content-Type: application/json" http://localhost:4010/api/data
 
-    d) perform SPARQL query to get all recordson 2018-09-07 between 3am and 4am    
+    c) perform SPARQL query to get all recordson 2018-09-07 between 3am and 4am    
         (query: [query1.sparql](query1.sparql), percent-encoded in curl statement)
 
         curl "http://localhost:4040/rdf/sparql?query=PREFIX%20mypch%3A%20%3Chttp%3A%2F%2Fw3id.org%2Fsemcon%2Fmypch%2Fns%23%3E%0APREFIX%20xsd%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0Aselect%20*%20where%20%7B%20%0A%20%20%20%20%3Fs%20mypch%3AObservation.effectiveDateTime%20%3Fo%20.%0A%20%20%20%20FILTER(%3Fo%20%3E%3D%20xsd%3AdateTime(%222018-09-07T03%3A00%3A00%22)%20%26%26%20%3Fo%20%3C%20xsd%3AdateTime(%222018-09-07T04%3A00%3A00%22))%0A%7D"
 
-    c) perform SPARQL query to get all records with cgm values below 85    
+    d) perform SPARQL query to get all records with cgm values below 85    
         (query: [query2.sparql](query2.sparql), percent-encoded in curl statement)
 
         curl "http://localhost:4040/rdf/sparql?query=PREFIX%20mypch%3A%20%3Chttp%3A%2F%2Fw3id.org%2Fsemcon%2Fmypch%2Fns%23%3E%0APREFIX%20xsd%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0Aselect%20*%20where%20%7B%20%0A%20%20%20%20%3Fs%20mypch%3AObservation.valueQuantity%2Fmypch%3AQuantity.value%20%3Fo%20.%0A%20%20%20%20FILTER(%3Fo%20%3C%2085)%0A%7D"

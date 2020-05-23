@@ -8,10 +8,10 @@ module WatermarkHelper
             return []
         end
         retVal = []
-        Store.pluck(:item).each do |item|
-            i = JSON(item)
+        Store.select(:id, :item).each do |el|
+            i = JSON(el.item)
             if Date.parse(i["time"]) == filter_date
-                retVal << i
+                retVal << el
             end
         end
         return retVal
@@ -42,10 +42,10 @@ module WatermarkHelper
         retVal = []
         ev = error_vector(key, data)
         i = 0
-        data.each do |item|
-            new_item = item.stringify_keys
+        data.each do |el|
+            new_item = JSON.parse(el.item)
             new_item["value"] += ev[i]
-            retVal << new_item
+            retVal << {id: el.id, item: new_item}.stringify_keys
             i += 1
         end
         return retVal

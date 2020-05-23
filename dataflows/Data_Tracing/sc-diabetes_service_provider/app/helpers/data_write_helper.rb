@@ -25,13 +25,13 @@ module DataWriteHelper
             store_data = []
             Store.transaction do
                 content.each do |item|
-                    if !Store.find_by_key(item["time"])
-                        my_store = Store.new(item: item.to_json, key: item["time"], prov_id: prov_id)
+                    if !Store.find_by_key(doorkeeper_token.application_id.to_s + "_" + item["time"])
+                        my_store = Store.new(item: item.to_json, key: doorkeeper_token.application_id.to_s + "_" + item["time"], prov_id: prov_id)
                         my_store.save
                         new_items << my_store.id
                         store_data << item
                     else
-                        puts "DUPLICATE: " + item["time"].to_s
+                        puts "DUPLICATE: " + doorkeeper_token.application_id.to_s + "_" + item["time"].to_s
                     end
                 end
             end
