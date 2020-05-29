@@ -157,7 +157,7 @@ This section provides example commands to demonstrate the functionality describe
             '{"pia_url":"https://data-vault.eu","app_key":"{OAuth2-Identifer}","app_secret":"{OAuth2-Secret}","repo":"oyd.diabetes","map":[{"deviceId":"deviceId","type":"type","units":"units","time":"time","id":"id","value":"value"}]}'
 
 4. **Analysis through R & Jupyter Notebooks**    
-    open [R-Notebook](R_Notebook_DataVault.Rmd) / [Jupyter Notebook](Jupyter_Notebook-DataVault.ipynb) and paste credential information:
+    open [R-Notebook](R_Notebook_DataVault.Rmd) / [Jupyter Notebook](Jupyter_Notebook_DataVault.ipynb) and paste credential information:
 
         # in R
         key <- '{paste OAuth2-Identifier here}' 

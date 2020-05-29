@@ -92,7 +92,7 @@ This section provides example commands to demonstrate the functionality describe
 
     d) retrieve information from local Semantic Container of PwD    
 
-        # number of records
+        # number of records: 4031
         curl -s -H "Content-Type: application/json" \
             http://localhost:4000/api/data/plain | jq -r '. | length'
 
