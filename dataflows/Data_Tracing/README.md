@@ -22,7 +22,7 @@ The following stakeholders are part of the dataflow:
 
 * **Service Provider** receives diabetes data from various PwDs and aggregates/anonymizes the data    
 
-* **Pharamceutical Corporation** buys a subset of the aggregated data provided by the Service Provider    
+* **Research Institute** buys a subset of the aggregated data (result data set) provided by the Service Provider    
 
 
 ## Components    
@@ -37,7 +37,7 @@ The following components are part of the dataflow:
 * **Cloud Semantic Container of Service Provider**    
     *configuration:* [df3_service_cloud_init.trig](df3_service_cloud_init.trig)     
 
-* **Cloud Semantic Container of Pharmaceutical Corporation**    
+* **Cloud Semantic Container of Reserach Institute**    
     *configuration:* [df3_corp_cloud_init.trig](df3_corp_cloud_init.trig)     
 
 
@@ -60,14 +60,14 @@ The following components are part of the dataflow:
     The following capabilities are demonstrated in this step:    
     * aggregating/anonymizing data in a Semantic Container
 
-3. **Pharmaceutical Corporation acquires data set**    
-    A subset of the aggregated data is tranferred to a Semantic Container of the Pharmaceutical Company.
+3. **Research Institute acquires data set**    
+    A subset of the aggregated data is tranferred to a Semantic Container of the Research Institute.
 
     The following capabilities are demonstrated in this step:    
     * a service provider transfers selected (aggregated) data to a 3rd party
 
 4. **PwD traces data along processing pipeline**
-    PwDs use information in Semantic Containers to trace the data flow from the local container towards the cloud container of the Pharmaceutical Corporation.
+    PwDs use information in Semantic Containers to trace the data flow from the local container towards the cloud container of the Research Institute.
 
     The following capabilities are demonstrated in this step:    
     * each PwD traces his/her own data and compiles a usage report
@@ -200,8 +200,8 @@ This section provides example commands to demonstrate the functionality describe
         curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $SERVICE_TOKEN_CLOUD" \
             http://localhost:4100/api/data/plain | jq -r '. | length'
 
-3. **Pharmaceutical Corporation acquires data set**    
-    a) start cloud Semantic Container for harmaceutical Corporation (*docker name: df3_corp_cloud, port: 4200*)    
+3. **Research Institute acquires data set**    
+    a) start cloud Semantic Container for Research Institute (*docker name: df3_corp_cloud, port: 4200*)    
 
         SC_IMAGE=semcon/sc-diabetes:latest; \
         docker run -d --name df3_corp_cloud -p 4200:3000 \
@@ -219,7 +219,7 @@ This section provides example commands to demonstrate the functionality describe
             http://localhost:4200/oauth/token | jq -r '.access_token'`
 
 
-    c) Service Provider pushes data to Pharmaceutical Corporation    
+    c) Service Provider pushes data to Research Institute    
         in this examples it is a single day (2018-09-07) that includes only data from PwD #1
 
         curl -s -H "Authorization: Bearer $SERVICE_TOKEN_CLOUD" http://localhost:4100/api/data/2018-09-07 | \
@@ -239,7 +239,7 @@ This section provides example commands to demonstrate the functionality describe
             jq -r '.[0]'`; \
             curl -s http://localhost:4001/api/rcpt/2/$RECEIPT_ID | jq
 
-    **Result:** the subsequent access requests from local container (uid: `b9bf5926-4ce4-4568-b479-dcf2a4b917fa`) to Serivce Prover (uid :`e5058d89-8744-4c61-ab70-aaa4749d24a5`) to Pharmaceutical Corporation (uid: `658e0758-9638-4b07-9553-e4cf65c1e9df`) are shown in the usage report    
+    **Result:** the subsequent access requests from local container (uid: `b9bf5926-4ce4-4568-b479-dcf2a4b917fa`) to Serivce Prover (uid :`e5058d89-8744-4c61-ab70-aaa4749d24a5`) to Research Institute (uid: `658e0758-9638-4b07-9553-e4cf65c1e9df`) are shown in the usage report    
 
     *Hint:* use the API endpoint `curl -s http://HOST:PORT/api/receipt/:RECEIPT_HASH` (i.e., `receipt` instead of `rcpt`) to also show individual IDs of the records transferred; for an overview the abreviated version is used here
 
@@ -274,7 +274,7 @@ This section provides example commands to demonstrate the functionality describe
             curl -s http://localhost:4002/api/rcpt/2/$RECEIPT_ID | jq
 
 
-    **Result:** since data from PwD #2 was not used in the aggregation for the query from the Pharmaceutical Corporation (day=2018-09-07) the tracing shows only data in the local container (uid: `a`) and transfer to the Service Provider (uid: `e5058d89-8744-4c61-ab70-aaa4749d24a5`)    
+    **Result:** since data from PwD #2 was not used in the aggregation for the query from the Research Institute (day=2018-09-07) the tracing shows only data in the local container (uid: `a`) and transfer to the Service Provider (uid: `e5058d89-8744-4c61-ab70-aaa4749d24a5`)    
 
     ```json
     {
@@ -292,7 +292,7 @@ This section provides example commands to demonstrate the functionality describe
     }    
     ```
 
-    c) transfer additional data (`day=2018-09-08`, i.e., a dataset that includes both PwDs) from Service Provider to Pharmaceutical Corporation    
+    c) transfer additional data (`day=2018-09-08`, i.e., a dataset that includes both PwDs) from Service Provider to Research Institute    
 
         curl -s -H "Authorization: Bearer $SERVICE_TOKEN_CLOUD" http://localhost:4100/api/data/2018-09-08 | \
             curl -s -X POST -d @- \
@@ -304,7 +304,7 @@ This section provides example commands to demonstrate the functionality describe
                 -H "Authorization: Bearer $SERVICE_TOKEN_CLOUD" \
                 http://localhost:4100/api/receipt
 
-    **Result PwD #1**: an additional entry tranferred from Service Provider to Pharmaceutical Corporation    
+    **Result PwD #1**: an additional entry tranferred from Service Provider to Research Institute    
 
         RECEIPT_ID=`curl -s -H "Authorization: Bearer $PWD1_TOKEN_LOCAL" http://localhost:4001/api/receipts | \
             jq -r '.[0]'`; \
@@ -340,7 +340,7 @@ This section provides example commands to demonstrate the functionality describe
     ```
 
 
-    **Result PwD #2**: data now also tranferred from Service Provider to Pharmaceutical Corporation    
+    **Result PwD #2**: data now also tranferred from Service Provider to Research Institute    
 
         RECEIPT_ID=`curl -s -H "Authorization: Bearer $PWD2_TOKEN_LOCAL" http://localhost:4002/api/receipts | \
             jq -r '.[0]'`; \
