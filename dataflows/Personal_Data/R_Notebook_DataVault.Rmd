@@ -1,6 +1,7 @@
 ---
-title: 'Dataflow: Data Donation'
+title: 'Dataflow: Personal Data'
 output:
+  pdf_document: default
   html_document:
     df_print: paged
 ---

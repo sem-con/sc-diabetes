@@ -1,0 +1,125 @@
+{
+  "head": {
+    "vars": [ "s" , "o" ]
+  } ,
+  "results": {
+    "bindings": [
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/9f8df4896425c7387f2ec8c7c07ac7d4" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "82.09845791151322" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/2d2ce2b07ada273fb87c54f59e035b2e" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "83.86423539630138" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/08cbfc6d14fb887bf5111ff2e156d94c" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "84.18801350647759" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/76b79c391873d358cbf1a70c029a7a72" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "84.10095300886356" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/0121efefffeecf9a0af8758ead56e5a9" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "82.85795002640654" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/b6e1c4178383de2803fdb4f7bf8a828a" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "84.8414450392217" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/4311af22818341e07b6a07acf97b516c" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "84.84935017781966" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/58849f2b0322bcc9e6295744cf20ae32" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "84.8044599453046" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/23efa71c5a128e72479c2ba6f48d44ce" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "80.87219099295673" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/d2c66b7e91901fc8bfb90f6549ecbb3e" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "84.93134610069119" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/d1b098330f709ee6544cde9dad30574f" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "82.09278843919878" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/93099dde532bdd31e234e1ea25c920e2" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "84.83499884885829" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/3bdb080de8d7a012fc528cb7450381ba" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "84.82576946519669" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/949e9a949154bd3924bb676b0dd71986" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "82.09234040826502" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/0f3efa4bbc2c40bc39a35aaf65a938ac" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "83.99390757304941" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/430c6c4088748b66c5be653068c20da8" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "83.01304473806958" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/de438a03c5a1e4f93770d0fb41da2252" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "82.86375179113901" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/d3a82b6435893a62343e78a99c61e34d" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "82.15210995994669" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/cc0ba99ccdd3b697c3873b01c6815d36" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "82.91385308096184" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/45446056141a4aa9bcee5c4a39814798" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "83.92517966059035" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/c80018fb97b207315b031cb3bf442143" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "80.92735598370106" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/83c6d794659bba146b0ef8a87df62b44" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "80.02082396402976" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/c3a93b9af25dfed0cb21c64d308565c8" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "84.87318826227461" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/4aed94f3e011bec5759a599a50d1a924" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "82.92394111617723" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/8e7ba00d9aaa1de195d56148e6719f84" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "84.99787381876706" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/3d865dcc7d24aebf410dbe60bcd1873a" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "83.93208068558019" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/fdaeda3eb1ccb10d654c472921580b99" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "84.86747578651855" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/c1415dd14d24fbca3a4884cccb4333f5" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "84.99835642453348" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/5be460cc7577b2992f5f3da0ea32e10b" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "value": "84.9181510006023" }
+      }
+    ]
+  }
+}

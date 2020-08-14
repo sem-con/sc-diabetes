@@ -1,0 +1,57 @@
+{
+  "head": {
+    "vars": [ "s" , "o" ]
+  } ,
+  "results": {
+    "bindings": [
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/aeb2e952a16b5ce3fbff8278921719a0" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#dateTime" , "value": "2018-09-07T03:55:00" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/4f05f93418e7aafbedaf026f70b5b301" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#dateTime" , "value": "2018-09-07T03:00:00" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/0c63bc8001fe387dd69ba8a9baa8cbcd" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#dateTime" , "value": "2018-09-07T03:30:00" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/c72c84361eabb07770b6c09a197d120d" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#dateTime" , "value": "2018-09-07T03:35:00" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/7d5b8bfe42d7abb338b34bdccb18d104" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#dateTime" , "value": "2018-09-07T03:50:00" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/733ad339626dc386d660d109e2412160" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#dateTime" , "value": "2018-09-07T03:40:00" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/dff7859ab34370d1b57f67043b0280a5" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#dateTime" , "value": "2018-09-07T03:45:00" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/0ffcf923d932fa1bc3945585a1c84ee1" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#dateTime" , "value": "2018-09-07T03:05:00" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/5c549840f4116815252524bc435314aa" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#dateTime" , "value": "2018-09-07T03:25:00" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/5df5bbca3a7e1ca2cf6efbbc92754655" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#dateTime" , "value": "2018-09-07T03:15:00" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/bb7274123919ab9517a7e3744a09856b" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#dateTime" , "value": "2018-09-07T03:10:00" }
+      } ,
+      {
+        "s": { "type": "uri" , "value": "http://w3id.org/semcon/mypch/resource/ec726bf2d0f40b844baddfbced1a73d7" } ,
+        "o": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#dateTime" , "value": "2018-09-07T03:20:00" }
+      }
+    ]
+  }
+}
