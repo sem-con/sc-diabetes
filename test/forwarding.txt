@@ -12,7 +12,7 @@ docker run -d --name forward -p 4000:3000 \
     $SC_IMAGE /bin/init.sh "$(< forward_init.trig)"
 
 # start HDS double
-docker rm -f double; docker run -d --name double -p 4010:3000 semcon/sc-base
+docker rm -f hds; docker run -d --name hds -p 4010:3000 semcon/sc-base
 
 # get credentials for A
 APP_KEY=`docker logs forward 2>/dev/null | grep ^APP_KEY | awk -F " " '{print $NF}'`; \
@@ -23,8 +23,7 @@ export PWD_TOKEN_LOCAL=`curl -X POST -s -d grant_type=client_credentials \
 echo $PWD_TOKEN_LOCAL
 
 # write data to container A
-cat data.json | \
-     curl -X POST -d @- \
-         -H "Content-Type: application/json" \
-         -H "Authorization: Bearer $PWD_TOKEN_LOCAL" \
-         http://localhost:4000/api/data
+cat data.json | curl -X POST -d @- \
+     -H "Content-Type: application/json" \
+     -H "Authorization: Bearer $PWD_TOKEN_LOCAL" \
+     http://localhost:4000/api/data

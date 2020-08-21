@@ -82,17 +82,17 @@ This section provides example commands to demonstrate the functionality describe
             -e IMAGE_NAME=$SC_IMAGE \
             $SC_IMAGE /bin/init.sh "$(< df0_pwd_local_init.trig)"
 
-    v) write diabetes data into Semantic Container    
+    b) write diabetes data into Semantic Container    
 
         # dataset with data from 2018-09-07 to 2018-09-20
-        cat df2_data.json | \
+        cat df0_data.json | \
             curl -X POST -d @- \
                 -H "Content-Type: application/json" \
                 http://localhost:4000/api/data
 
     d) retrieve information from local Semantic Container of PwD    
 
-        # number of records
+        # number of records: 4031
         curl -s -H "Content-Type: application/json" \
             http://localhost:4000/api/data/plain | jq -r '. | length'
 

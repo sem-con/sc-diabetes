@@ -2,36 +2,53 @@ module DataAccessHelper
     include WatermarkHelper
 
     def getData(params)
+        require 'securerandom'
+
         if ENV["WATERMARK"].to_s == ""
             case params.to_s
             when ->(n) { n.starts_with?("id=") }
-                [Store.select(:id, :item).find(params[3..-1])].map(&:serializable_hash) rescue []
+                @store = Store.find(params[3..-1])
             when ->(n) { n.starts_with?("day=") }
                 day_filter = params[4..-1]
-                Store.where("key LIKE '%" + day_filter + "%'").select(:id, :item).to_a.map(&:serializable_hash)
+                @store = Store.where("key LIKE '%" + day_filter + "%'")
             else
-                Store.select(:id, :item).to_a.map(&:serializable_hash)
+                @store = Store.all
             end
-        else
+
+            # merge and filter data
+            tmp = Hash.new
+            @store.each do |el|
+                item = JSON.parse(el.item)
+                if tmp[item["time"]].nil?
+                    tmp[item["time"]] = {ids: [el.id], values:[item["value"]]}
+                else
+                    if item["value"] >= 5 && item["value"] <= 13
+                        tmp[item["time"]][:ids] << el.id
+                        tmp[item["time"]][:values] << item["value"]
+                    end
+                end
+            end unless @store.nil?
+
+            # compile response
             retVal = []
-            fragments = []
-            if params.class.to_s != "String"
-                params = params.stringify_keys.except("format", "controller", "action", "store").to_json rescue ""
+            tmp.each do |el|
+                retVal << {
+                    id: el.last[:ids],
+                    item: {
+                        deviceId: "aggregate",
+                        type: "cbg",
+                        units: "mmol/L",
+                        time: el.first,
+                        id: SecureRandom.hex,
+                        value: el.last[:values].inject{ |sum, el| sum + el }.to_f / el.last[:values].size
+                    }
+                }.stringify_keys
             end
-            if params == "{}" || params == ""
-                fragments = all_fragments("")
-            else
-                items = []
-                Store.where(id: params).pluck(:item).each { |item| items << Date.parse(JSON(item)["time"]).to_s }
-                fragments = items.uniq
-            end
-            fragments.each do |fragment_id|
-                key = get_fragment_key(fragment_id, doorkeeper_token.application_id)
-                data = get_fragment(fragment_id)
-                retVal += apply_watermark(data, key)
-            end
-            return retVal
+
+        else
+            retVal = [] # not yet supported
         end
+        return retVal        
     end
 
     def get_provision(params, logstr)
