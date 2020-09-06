@@ -239,7 +239,11 @@ This section provides example commands to demonstrate the functionality describe
             jq -r '.[0]'`; \
             curl -s http://localhost:4001/api/rcpt/2/$RECEIPT_ID | jq
 
-    **Result:** the subsequent access requests from local container (uid: `b9bf5926-4ce4-4568-b479-dcf2a4b917fa`) to Serivce Prover (uid :`e5058d89-8744-4c61-ab70-aaa4749d24a5`) to Research Institute (uid: `658e0758-9638-4b07-9553-e4cf65c1e9df`) are shown in the usage report    
+    **Result:** the subsequent access requests from local container (uid: `b9bf5926-4ce4-4568-b479-dcf2a4b917fa`) to Serivce Prover (uid :`e5058d89-8744-4c61-ab70-aaa4749d24a5`) to Research Institute (uid: `658e0758-9638-4b07-9553-e4cf65c1e9df`) are shown in the usage report.
+    
+    The figure below shows an example of the Data Tracing input and output in the command-line.
+
+     <kbd><img src="screenshot.png"></kbd>
 
     *Hint:* use the API endpoint `curl -s http://HOST:PORT/api/receipt/:RECEIPT_HASH` (i.e., `receipt` instead of `rcpt`) to also show individual IDs of the records transferred; for an overview the abreviated version is used here
 
