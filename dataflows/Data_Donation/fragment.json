@@ -5,7 +5,7 @@
     "units": "mmol/L",
     "time": "2015-12-02T12:13:44",
     "id": "ahmmvi0dsl31lvg4eehjljnn80m7ii7e",
-    "value": 7.098758701419974
+    "value": 7.220904897081345
   },
   {
     "deviceId": "DexG4Rec_SM45143452",
@@ -13,7 +13,7 @@
     "units": "mmol/L",
     "time": "2015-12-02T12:16:06",
     "id": "5j6ribjsv0jtp063fi9dc26fqnn1er9a",
-    "value": 7.30745081903096
+    "value": 7.205516349171842
   },
   {
     "deviceId": "InsOmn-130130814",
@@ -21,7 +21,7 @@
     "units": "mmol/L",
     "time": "2015-12-02T13:22:59",
     "id": "q05vehd9l9feodg6u3dd3co1cbqui31u",
-    "value": 9.2612928158816
+    "value": 9.302595860650284
   },
   {
     "deviceId": "DexG4Rec_SM45143452",
@@ -29,7 +29,7 @@
     "units": "mmol/L",
     "time": "2015-12-02T13:25:17",
     "id": "pr3bufbri2pm5ufidtncdra8m0qf4a86",
-    "value": 9.548793031305971
+    "value": 9.439259949066596
   },
   {
     "deviceId": "InsOmn-130130814",
@@ -37,7 +37,7 @@
     "units": "mmol/L",
     "time": "2015-12-02T13:51:37",
     "id": "b0rq8919f90is0embtp00vb1mmv3r7aq",
-    "value": 9.258242052979485
+    "value": 9.320672714233378
   },
   {
     "deviceId": "DexG4Rec_SM45143452",
@@ -45,7 +45,7 @@
     "units": "mmol/L",
     "time": "2015-12-02T13:54:11",
     "id": "crg24hg0krjjl4hnc8a4akmgr5pq4b77",
-    "value": 9.517110795028096
+    "value": 9.398591126828263
   },
   {
     "deviceId": "DexG4Rec_SM45143452",
@@ -53,6 +53,6 @@
     "units": "mmol/L",
     "time": "2015-12-02T13:54:27",
     "id": "r4rguco0ghdsoiimuhnsi1jm7b2fcttb",
-    "value": 9.458558669442024
+    "value": 9.48904121475084
   }
 ]

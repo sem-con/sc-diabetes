@@ -79,7 +79,7 @@ The following components are part of the dataflow:
 
 
 ## Detailed Commandline Walk-through    
-This section provides example commands to demonstrate the functionality described above.
+This section provides example commands to demonstrate the functionality described above. There is also a Loom recording of the commandline walk-through available: https://www.loom.com/share/ad4fad8668814800a0252a14672c3d88    
 
 1. **PwD uploads data**    
     a) start local Semantic Container for PwD (*docker name: df1_pwd_local, port: 4000*)    
