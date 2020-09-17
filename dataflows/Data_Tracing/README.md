@@ -79,11 +79,12 @@ This section provides example commands to demonstrate the functionality describe
 1. **PwDs upload data**    
     a) start local Semantic Container for PwD #1 (*docker name: df3_pwd1_local, port: 4001*)    
 
+        LOCAL_IP=192.168.178.21; \
         SC_IMAGE=semcon/sc-diabetes:latest; \
         docker run -d --name df3_pwd1_local -p 4001:3000 \
             -e IMAGE_SHA256="$(docker image ls --no-trunc -q $SC_IMAGE | cut -c8-)" \
             -e IMAGE_NAME=$SC_IMAGE -e AUTH=true \
-            -e SERVICE_ENDPOINT="http://10.0.0.6:4001" \
+            -e SERVICE_ENDPOINT="http://$LOCAL_IP:4001" \
             $SC_IMAGE /bin/init.sh "$(< df3_pwd1_local_init.trig)"
 
     b) get credentials and store in `PWD1_TOKEN_LOCAL`    
@@ -105,11 +106,12 @@ This section provides example commands to demonstrate the functionality describe
 
     d) start local Semantic Container for PwD #2 (*docker name: df3_pwd2_local, port: 4002*)    
 
+        LOCAL_IP=192.168.178.21; \
         SC_IMAGE=semcon/sc-diabetes:latest; \
         docker run -d --name df3_pwd2_local -p 4002:3000 \
             -e IMAGE_SHA256="$(docker image ls --no-trunc -q $SC_IMAGE | cut -c8-)" \
             -e IMAGE_NAME=$SC_IMAGE -e AUTH=true \
-            -e SERVICE_ENDPOINT="http://10.0.0.6:4002" \
+            -e SERVICE_ENDPOINT="http://$LOCAL_IP:4002" \
             $SC_IMAGE /bin/init.sh "$(< df3_pwd2_local_init.trig)"
 
     e) get credentials and store in `PWD2_TOKEN_LOCAL`    
@@ -132,11 +134,12 @@ This section provides example commands to demonstrate the functionality describe
 2. **Service Provider aggregates/anonymizes data**    
     a) start cloud Semantic Container for Service Provider (*docker name: df3_service_cloud, port: 4100*)    
 
+        LOCAL_IP=192.168.178.21; \
         SC_IMAGE=semcon/sc-diabetes_service_provider:latest; \
         docker run -d --name df3_service_cloud -p 4100:3000 \
             -e IMAGE_SHA256="$(docker image ls --no-trunc -q $SC_IMAGE | cut -c8-)" \
             -e IMAGE_NAME=$SC_IMAGE -e AUTH=true \
-            -e SERVICE_ENDPOINT="http://10.0.0.6:4100" \
+            -e SERVICE_ENDPOINT="http://$LOCAL_IP:4100" \
             $SC_IMAGE /bin/init.sh "$(< df3_service_cloud_init.trig)"
 
     b) get credentials and store in `SERVICE_TOKEN_CLOUD`    
@@ -194,7 +197,7 @@ This section provides example commands to demonstrate the functionality describe
                 http://localhost:4002/api/receipt
 
     e) retrieve aggregated data from Service Provider    
-        in this scenario only data *in range* (8 < cgm-value < 12) is used in the aggregated result    
+        in this scenario only data *in range* (5 < cgm-value < 13) is used in the aggregated result    
 
         # number of records: 4.031
         curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $SERVICE_TOKEN_CLOUD" \
@@ -203,11 +206,12 @@ This section provides example commands to demonstrate the functionality describe
 3. **Research Institute acquires data set**    
     a) start cloud Semantic Container for Research Institute (*docker name: df3_corp_cloud, port: 4200*)    
 
+        LOCAL_IP=192.168.178.21; \
         SC_IMAGE=semcon/sc-diabetes:latest; \
         docker run -d --name df3_corp_cloud -p 4200:3000 \
             -e IMAGE_SHA256="$(docker image ls --no-trunc -q $SC_IMAGE | cut -c8-)" \
             -e IMAGE_NAME=$SC_IMAGE -e AUTH=true \
-            -e SERVICE_ENDPOINT="http://10.0.0.6:4200" \
+            -e SERVICE_ENDPOINT="http://$LOCAL_IP:4200" \
             $SC_IMAGE /bin/init.sh "$(< df3_corp_cloud_init.trig)"
 
     b) get credentials and store in `CORP_TOKEN_CLOUD`    

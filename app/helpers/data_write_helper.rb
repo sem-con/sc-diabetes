@@ -13,10 +13,11 @@ module DataWriteHelper
             end
 
             # write provenance
-            input_hash = Digest::SHA256.hexdigest(input.to_json)
+            # input_hash = Digest::SHA256.hexdigest(input.to_json)
             prov_timestamp = Time.now.utc
             prov = Provenance.new(
-                input_hash: input_hash,
+                prov: provenance,
+                input_hash: read_hash,
                 startTime: prov_timestamp)
             prov.save
             prov_id = prov.id
@@ -122,16 +123,23 @@ module DataWriteHelper
             end
 
             # create receipt information
-            receipt_json = createReceipt(input_hash, new_items, prov_timestamp)
+            receipt_json = createReceipt(read_hash, new_items, prov_timestamp)
             receipt_hash = Digest::SHA256.hexdigest(receipt_json.to_json)
 
+            # finalize provenance
+            revocation_key = SecureRandom.hex(16).to_s
             Provenance.find(prov_id).update_attributes(
                 scope: new_items.to_s,
                 receipt_hash: receipt_hash.to_s,
+                revocation_key: revocation_key,
                 prov: provenance,
-                endTime: Time.now.utc)
+                endTime: Time.now.utc,
+                input_hash: read_hash)
 
-            createLog({"type": "write", "scope": new_items.to_s})
+            # write Log
+            createLog({
+                "type": "write", 
+                "scope": new_items.to_s})
 
             # if FORWARDURL is defined submit POST request
             if ENV["FORWARDURL"].to_s != ""
@@ -155,7 +163,8 @@ module DataWriteHelper
 
             render json: {"receipt": receipt_hash.to_s,
                           "serviceEndpoint": ENV["SERVICE_ENDPOINT"].to_s,
-                          "read_hash": read_hash},
+                          "read_hash": read_hash,
+                          "revocation_key": revocation_key},
                    status: 200
 
         rescue => ex

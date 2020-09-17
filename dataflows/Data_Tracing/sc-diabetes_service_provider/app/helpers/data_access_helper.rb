@@ -3,7 +3,6 @@ module DataAccessHelper
 
     def getData(params)
         require 'securerandom'
-
         if ENV["WATERMARK"].to_s == ""
             case params.to_s
             when ->(n) { n.starts_with?("id=") }
@@ -22,7 +21,7 @@ module DataAccessHelper
                 if tmp[item["time"]].nil?
                     tmp[item["time"]] = {ids: [el.id], values:[item["value"]]}
                 else
-                    if item["value"] >= 5 && item["value"] <= 13
+                    if item["value"] > 5 && item["value"] < 13
                         tmp[item["time"]][:ids] << el.id
                         tmp[item["time"]][:values] << item["value"]
                     end
