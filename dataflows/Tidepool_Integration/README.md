@@ -50,7 +50,7 @@ The following components are part of the dataflow:
 ## High-level Steps and Capability Demonstration
 
 1. **Extract data from Tidepool device**    
-    TBD  
+    Link: https://github.com/MyPCH/uploader      
 
     The following capability is demonstrated in this step:     
 
